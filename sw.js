@@ -1,4 +1,4 @@
-const CACHE = 'chiangmai-ear-shell-v3';
+const CACHE = 'chiangmai-ear-shell-v4';
 const ROOT = self.registration.scope;
 const SHELL = new URL('./index.html', ROOT).href;
 const MANIFEST = new URL('./manifest.webmanifest', ROOT).href;
