@@ -1,0 +1,11 @@
+{
+  "name": "清迈听觉速查",
+  "short_name": "清迈听词",
+  "description": "清迈泰语听觉词卡与离线旅行速查",
+  "lang": "zh-CN",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f2e9",
+  "theme_color": "#126b56"
+}
