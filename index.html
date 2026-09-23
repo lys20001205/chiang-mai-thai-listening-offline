@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5f2e9">
+<title>清迈听觉速查 · 离线版</title>
+<style>
+:root{--bg:#f5f2e9;--paper:#fffdf8;--ink:#193b36;--muted:#61746b;--line:#d9e2d8;--green:#126b56;--green2:#e1f3e9;--orange:#e66543;--orange2:#fff0e5;--shadow:0 12px 30px rgba(31,71,55,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}button,input{font:inherit}button{cursor:pointer}button:disabled{cursor:default;opacity:.42}a{color:var(--green)}.shell{max-width:760px;margin:auto;padding:0 16px calc(98px + env(safe-area-inset-bottom))}.top{position:sticky;top:0;z-index:5;margin:0 -16px;padding:12px 16px 13px;background:rgba(245,242,233,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.topline{display:flex;align-items:center;gap:10px}.back,.iconbtn{border:0;background:var(--paper);border-radius:15px;min-width:46px;min-height:46px;color:var(--ink);box-shadow:var(--shadow)}.brand{font-weight:900;font-size:20px;line-height:1.2;flex:1}.tiny{font-size:12px;color:var(--muted)}.search{margin-top:11px;width:100%;min-height:48px;padding:11px 16px;border:1.5px solid var(--line);border-radius:17px;background:var(--paper);outline:none;color:var(--ink)}.search:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(18,107,86,.11)}main{padding-top:18px}.hero{background:linear-gradient(140deg,#126b56,#0c524c);color:#fff;border-radius:30px;padding:24px;box-shadow:var(--shadow);overflow:hidden;position:relative}.hero:after{content:"ฟัง";position:absolute;right:-8px;bottom:-33px;font-size:100px;font-weight:900;opacity:.09}.hero h1{font-size:30px;line-height:1.15;margin:8px 0 11px;position:relative}.hero p{margin:0;max-width:30em;position:relative}.eyebrow{font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.hero .eyebrow{color:#b7ead3}.statrow{display:flex;gap:10px;margin-top:16px}.stat{flex:1;background:rgba(255,255,255,.13);border-radius:17px;padding:11px 13px;position:relative}.stat strong{display:block;font-size:21px;line-height:1.2}.stat span{font-size:12px;color:#d8f3e4}.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:22px 0 12px}.sectionhead h2{margin:0;font-size:22px;line-height:1.25}.sectionhead span,.hint,.meta{color:var(--muted);font-size:14px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.entrylink{border:1px solid var(--line);background:var(--paper);border-radius:23px;min-height:145px;padding:17px;text-align:left;color:var(--ink);box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:flex-start}.entrylink.wide{grid-column:span 2;min-height:118px}.entrylink .emoji{font-size:25px;line-height:1}.entrylink b{font-size:19px;margin-top:11px;line-height:1.3}.entrylink small{color:var(--muted);font-size:13px;margin-top:3px}.entrylink:active,.btn:active,.lessonrow:active{transform:scale(.985)}.panel,.learncard,.result,.scamcard,.patterncard{background:var(--paper);border:1px solid var(--line);border-radius:25px;padding:20px;box-shadow:var(--shadow)}.panel{margin-bottom:13px}.panel h2,.panel h3{margin:0 0 9px}.panel p{margin:7px 0}.pill{display:inline-flex;align-items:center;min-height:29px;border-radius:999px;padding:3px 10px;background:var(--green2);color:var(--green);font-size:12px;font-weight:800}.pill.warn{background:var(--orange2);color:#9e492d}.lead{font-size:16px;color:var(--muted);margin:4px 0 17px}.lessonrow{width:100%;min-height:80px;text-align:left;display:flex;gap:12px;align-items:center;justify-content:space-between;background:var(--paper);border:1px solid var(--line);border-radius:21px;padding:13px 15px;margin:9px 0;color:var(--ink);box-shadow:var(--shadow)}.lessonrow .num{background:var(--green2);color:var(--green);width:38px;height:38px;display:grid;place-items:center;border-radius:13px;font-weight:900;flex:none}.lessonrow b{display:block;font-size:17px}.lessonrow small{display:block;color:var(--muted);font-size:13px}.lessonrow .arrow{color:var(--green);font-weight:900}.bar{height:9px;border-radius:99px;background:#dce6dc;overflow:hidden;margin:14px 0}.bar i{display:block;height:100%;background:var(--green);border-radius:99px}.cardtop,.between{display:flex;align-items:center;justify-content:space-between;gap:10px}.cardtop{margin-bottom:18px}.learncard{min-height:320px;display:flex;flex-direction:column}.thai{font-family:Tahoma,"Noto Sans Thai",system-ui,sans-serif;letter-spacing:.01em;overflow-wrap:anywhere}.learncard .thai{font-size:clamp(37px,10vw,56px);line-height:1.25;font-weight:800;margin:6px 0 7px}.roman{font-size:20px;color:var(--green);font-weight:750;overflow-wrap:anywhere}.zh{font-size:21px;font-weight:800;margin-top:10px}.tip{margin-top:14px;color:var(--muted);font-size:15px;border-top:1px dashed var(--line);padding-top:13px}.tip b{color:var(--ink)}.btnrow{display:flex;gap:10px;margin:14px 0}.btn{border:1px solid var(--line);border-radius:17px;background:var(--paper);color:var(--ink);min-height:48px;padding:10px 15px;font-weight:800;flex:1}.btn.primary{background:var(--green);border-color:var(--green);color:#fff}.btn.orange{background:var(--orange);border-color:var(--orange);color:#fff}.btn.selected{background:var(--green2);border-color:var(--green);color:var(--green)}.btn.small{flex:none;font-size:14px;padding:8px 13px;min-height:44px}.micro{font-size:13px;color:var(--muted)}.triplet .thai{font-size:25px;font-weight:800;line-height:1.35}.triplet .roman{font-size:16px}.triplet .zh{font-size:17px;margin-top:2px}.triplet.compact .thai{font-size:19px}.triplet.compact .roman{font-size:13px}.triplet.compact .zh{font-size:14px}.trigger-word{background:var(--orange2);color:#a7472b;border-radius:17px;padding:10px 13px;font-weight:900;margin-bottom:14px;display:inline-block}.chips{display:flex;gap:8px;overflow:auto;padding:6px 0 12px;scrollbar-width:thin}.chip{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;min-height:44px;padding:8px 15px;white-space:nowrap}.chip.active{background:var(--green);border-color:var(--green);color:white}.patterncard,.scamcard,.result{margin:12px 0}.patterncard h3,.scamcard h3{margin:0 0 13px;font-size:19px}.examples{display:grid;gap:8px;margin-top:14px}.example{border:1px solid var(--line);border-radius:17px;padding:12px;background:#f8faf6}.label{font-size:12px;letter-spacing:.08em;color:var(--muted);font-weight:900;margin:16px 0 6px}.meaning{font-size:16px}.action{background:var(--green2);color:#174e3f;border-radius:15px;padding:10px 12px;margin-top:12px;font-size:15px}.tablewrap{background:var(--paper);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:14px;border-bottom:1px solid var(--line);vertical-align:top}tr:last-child td{border-bottom:0}th{background:var(--green2);color:var(--green);font-size:14px}td{font-size:15px}td strong{font-size:17px;color:var(--green)}.choice{width:100%;display:block;text-align:left;margin:9px 0;min-height:53px}.choice.correct{border-color:var(--green);background:var(--green2);color:var(--green)}.choice.wrong{border-color:var(--orange);background:var(--orange2);color:#a7472b}.score{font-size:54px;line-height:1;font-weight:900;color:var(--green);margin:20px 0}.notice{border-left:4px solid var(--orange);background:var(--orange2);padding:12px 14px;border-radius:0 14px 14px 0;color:#684334;font-size:14px}.checklist{margin:0;padding-left:21px}.checklist li{margin:8px 0}.sources a{display:block;overflow-wrap:anywhere;margin:8px 0;font-size:14px}.bottom{position:fixed;bottom:0;left:0;right:0;z-index:6;background:rgba(255,253,248,.96);backdrop-filter:blur(16px);border-top:1px solid var(--line);padding:6px max(8px,env(safe-area-inset-left)) calc(6px + env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-right))}.bottom-inner{max-width:760px;margin:auto;display:grid;grid-template-columns:repeat(5,1fr);gap:2px}.navbtn{border:0;background:none;min-height:54px;border-radius:14px;color:var(--muted);font-size:11px;font-weight:800;display:grid;place-content:center;gap:1px}.navbtn .ni{font-size:20px;line-height:1}.navbtn.on{background:var(--green2);color:var(--green)}.empty{padding:35px 12px;text-align:center;color:var(--muted)}.screen-reader-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:480px){.grid{grid-template-columns:1fr 1fr}.entrylink{padding:15px;min-height:133px}.entrylink b{font-size:17px}.entrylink.wide{min-height:110px}table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}table,tbody,tr,td{display:block;width:100%}tr{padding:10px 15px;border-bottom:1px solid var(--line)}tr:last-child{border-bottom:0}td{border:0;padding:3px 0}td:nth-child(2){font-weight:800}.tablewrap td:last-child{color:var(--muted)}}
+@media(max-width:300px){body{font-size:15px}.shell{padding-left:10px;padding-right:10px}.top{margin:0 -10px;padding:7px 10px}.brand{font-size:16px;white-space:nowrap}.tiny{display:none}.search{margin-top:6px;min-height:44px;padding:8px 12px}.hero{padding:15px;border-radius:22px}.hero h1{font-size:23px;margin:5px 0}.hero p{font-size:13px}.statrow{margin-top:9px}.stat{padding:7px}.stat strong{font-size:16px}.grid{grid-template-columns:1fr}.entrylink,.entrylink.wide{grid-column:span 1;min-height:95px}.bottom-inner{gap:0}.navbtn{font-size:10px}.navbtn .ni{font-size:17px}}
+.sources summary{display:flex;align-items:center;min-height:44px;cursor:pointer}.sources summary::after{content:"展开";margin-left:auto;color:var(--muted);font-size:12px}.sources[open] summary::after{content:"收起"}.sources a{display:flex;align-items:center;min-height:44px}
+</style>
+</head>
+<body>
+<div class="shell"><header class="top"><div class="topline"><button id="back" class="back" type="button" aria-label="返回">←</button><div class="brand" id="title">清迈听觉速查</div><span class="tiny">完全离线</span></div><label class="screen-reader-only" for="search">搜索中文或罗马拼音</label><input id="search" class="search" type="search" autocomplete="off" placeholder="搜中文或拼音，例如 押金 / mat jam"></header><main id="app"></main></div>
+<nav class="bottom" aria-label="主要导航"><div class="bottom-inner" id="nav"></div></nav>
+<script>
+"use strict";
+/* 词条字段：th 泰文，rom 罗马拼音，zh 中文意思，tip 用法提示。罗马拼音为便于速查的近似写法，不标声调。 */
+const lessons=[
+{title:"打招呼与礼貌用语",desc:"先听懂肯定、否定和礼貌尾词。",cards:[
+{th:"สวัสดี",rom:"sa-wat-di",zh:"你好／再见",tip:"见面最常听到；离开时也能用。"},
+{th:"ขอบคุณ",rom:"khop-khun",zh:"谢谢",tip:"接受帮助、收款找零后都可能听到。"},
+{th:"ขอโทษ",rom:"kho-thot",zh:"对不起／打扰一下",tip:"道歉，也可用于礼貌地引起注意。"},
+{th:"ไม่เป็นไร",rom:"mai-pen-rai",zh:"没关系／不用了",tip:"回应道歉或婉拒时常用，须结合上下文。"},
+{th:"ครับ",rom:"khrap",zh:"男性说话者的礼貌尾词",tip:"常在句尾；不是表示同意。"},
+{th:"ค่ะ",rom:"kha",zh:"女性说话者的陈述礼貌尾词",tip:"常在句尾；与疑问尾词 คะ 声调不同。"},
+{th:"คะ",rom:"kha",zh:"女性说话者的疑问礼貌尾词",tip:"问句句尾常见；和 ค่ะ 不能只凭无声调拼音区分。"},
+{th:"ใช่",rom:"chai",zh:"是／对",tip:"确认价格、地点或你的理解时听到。"},
+{th:"ไม่ใช่",rom:"mai-chai",zh:"不是／不对",tip:"前面的 ไม่ 是否定，别只听后半截。"},
+{th:"ได้",rom:"dai",zh:"可以／能",tip:"答应请求时常用；也有“得到”的意思。"},
+{th:"ไม่ได้",rom:"mai-dai",zh:"不可以／不能",tip:"先听清开头的 ไม่，含义与 ได้ 相反。"},
+{th:"คุณ",rom:"khun",zh:"你／您",tip:"礼貌称呼；常放在姓名或问句前。"},
+{th:"ผม",rom:"phom",zh:"我（男性常用）",tip:"男性说话者自称，听到可判断谁在说自己。"},
+{th:"ฉัน",rom:"chan",zh:"我",tip:"自称，使用与场合、说话者有关。"},
+{th:"เรา",rom:"rao",zh:"我们／我",tip:"可指我们，也可能在口语里指自己。"},
+{th:"สบายดีไหม",rom:"sa-bai-di-mai",zh:"你好吗？",tip:"整句问候；结尾 ไหม 表示疑问。"},
+{th:"สบายดี",rom:"sa-bai-di",zh:"我很好／状态好",tip:"常作问候回应；也可说人或状态舒服。"},
+{th:"เจอกันใหม่",rom:"choe-kan-mai",zh:"下次见",tip:"告别时可能听到。"}]},
+{title:"数字与问价",desc:"先抓数字、泰铢和“总共”。",cards:[
+{th:"หนึ่ง",rom:"nueng",zh:"一",tip:"价格、人数、份数；后面常接量词。"},
+{th:"สอง",rom:"song",zh:"二",tip:"听报价时留意后面的 ร้อย（百）。"},
+{th:"สาม",rom:"sam",zh:"三",tip:"可用于数量或时间。"},
+{th:"สี่",rom:"si",zh:"四",tip:"数字；注意与 สิบ（十）不同。"},
+{th:"ห้า",rom:"ha",zh:"五",tip:"数字；五十常说 ห้าสิบ。"},
+{th:"หก",rom:"hok",zh:"六",tip:"数字；可能出现在房号或价格里。"},
+{th:"เจ็ด",rom:"chet",zh:"七",tip:"数字；便利店名称里的“七”也会听到。"},
+{th:"แปด",rom:"paet",zh:"八",tip:"数字；别和英文 eight 混听。"},
+{th:"เก้า",rom:"kao",zh:"九",tip:"数字；与 ข้าว（饭）只是近似拼音，泰语声调不同。"},
+{th:"สิบ",rom:"sip",zh:"十",tip:"十、几十的核心词。"},
+{th:"ยี่สิบ",rom:"yi-sip",zh:"二十",tip:"标准泰语；泰北话“二十”还可能说 ซาว。"},
+{th:"ร้อย",rom:"roi",zh:"百",tip:"สองร้อย 是两百；报价时紧盯。"},
+{th:"พัน",rom:"phan",zh:"千",tip:"活动或押金报价里可能听到。"},
+{th:"บาท",rom:"bat",zh:"泰铢",tip:"价格单位；问清是每人还是整车。"},
+{th:"เท่าไหร่",rom:"thao-rai",zh:"多少／多少钱",tip:"问数量或价格，常接在名词后。"},
+{th:"ราคา",rom:"ra-kha",zh:"价格",tip:"听到后注意紧跟的数字。"},
+{th:"ทั้งหมด",rom:"thang-mot",zh:"全部／总共",tip:"结账或团费中，问是否包含所有项目。"},
+{th:"เงินทอน",rom:"ngoen-thon",zh:"找零",tip:"现金付款后听到，核对找零。"},
+{th:"แพง",rom:"phaeng",zh:"贵",tip:"议价或评价价格时用。"},
+{th:"ถูก",rom:"thuk",zh:"便宜／正确",tip:"两个常见义，听前后文判断。"}]},
+{title:"点餐与饮食",desc:"先认食材、辣度和“加／不加”。",cards:[
+{th:"อาหาร",rom:"a-han",zh:"食物／餐食",tip:"餐馆标牌、服务员介绍里常见。"},
+{th:"เมนู",rom:"me-nu",zh:"菜单",tip:"英文 menu 借词，点菜时常听到。"},
+{th:"น้ำ",rom:"nam",zh:"水",tip:"点饮料时先确认是否收费、是什么水。"},
+{th:"ข้าว",rom:"khao",zh:"米饭",tip:"也在菜名里；与 เก้า（九）声调不同。"},
+{th:"ข้าวซอย",rom:"khao-soi",zh:"清迈咖喱面",tip:"北部名菜；通常有不同肉类选择。"},
+{th:"ไก่",rom:"kai",zh:"鸡／鸡肉",tip:"菜单食材；点咖喱面时常听到。"},
+{th:"หมู",rom:"mu",zh:"猪／猪肉",tip:"不吃猪肉可用 ไม่ใส่หมู。"},
+{th:"เนื้อ",rom:"nuea",zh:"肉／牛肉",tip:"单独作为菜单食材时常指牛肉；过敏或忌口请再确认。"},
+{th:"ปลา",rom:"pla",zh:"鱼",tip:"菜单食材；鱼露并不等于鱼肉。"},
+{th:"ไข่",rom:"khai",zh:"蛋",tip:"与 ขาย（卖）近似拼音，靠语境辨认。"},
+{th:"ผัก",rom:"phak",zh:"蔬菜",tip:"点素菜时会听到，但含不含鱼露仍需问。"},
+{th:"เผ็ด",rom:"phet",zh:"辣",tip:"点餐时常被问辣度。"},
+{th:"ไม่เผ็ด",rom:"mai-phet",zh:"不辣",tip:"明确说不辣；部分菜仍可能带少量辣味。"},
+{th:"หวาน",rom:"wan",zh:"甜",tip:"饮料甜度对话里常见。"},
+{th:"ไม่หวาน",rom:"mai-wan",zh:"不甜",tip:"点饮料可用；成品可能已预先加糖。"},
+{th:"อร่อย",rom:"a-roi",zh:"好吃",tip:"标准泰语；泰北话可能听到 ลำ。"},
+{th:"กิน",rom:"kin",zh:"吃",tip:"标准泰语；泰北话写作 กิ๋น 时声调不同。"},
+{th:"ดื่ม",rom:"duem",zh:"喝",tip:"饮料、酒水对话中可能听到。"},
+{th:"เอา",rom:"ao",zh:"要／拿",tip:"点单确认时关键；前面加 ไม่ 即不要。"},
+{th:"ไม่เอา",rom:"mai-ao",zh:"不要",tip:"婉拒推销或不想点时可说。"},
+{th:"ใส่",rom:"sai",zh:"放入／加",tip:"食材、调料是否加入时听到。"},
+{th:"ไม่ใส่",rom:"mai-sai",zh:"不加",tip:"后接食材名，如 ไม่ใส่หมู；严重过敏仍应另作明确确认。"}]},
+{title:"问路与交通",desc:"抓方向、目的地、上车前的价格。",cards:[
+{th:"ไป",rom:"pai",zh:"去",tip:"问目的地、路线和车费的高频词。"},
+{th:"มา",rom:"ma",zh:"来",tip:"问来处或叫你过来时听到。"},
+{th:"ที่ไหน",rom:"thi-nai",zh:"哪里",tip:"问地点；泰北话“哪里”可能不同。"},
+{th:"ตรงไป",rom:"trong-pai",zh:"直走",tip:"问路后常听到的指路短语。"},
+{th:"ซ้าย",rom:"sai",zh:"左",tip:"方向词；与 ใส่（加）近似拼音但泰文不同。"},
+{th:"ขวา",rom:"khwa",zh:"右",tip:"指路或导航里常听到。"},
+{th:"เลี้ยว",rom:"liao",zh:"转弯",tip:"通常后接左或右。"},
+{th:"หยุด",rom:"yut",zh:"停",tip:"车上要下车或要求停止时可用。"},
+{th:"ลง",rom:"long",zh:"下车／下去",tip:"在双条车上听到多指下车。"},
+{th:"ถึง",rom:"thueng",zh:"到达",tip:"常和目的地连用。"},
+{th:"ไกล",rom:"klai",zh:"远",tip:"与 ใกล้（近）罗马拼音近似、声调不同；听不准就看地图。"},
+{th:"ใกล้",rom:"klai",zh:"近",tip:"与 ไกล（远）声调不同；不要仅凭这里的无调拼音判断。"},
+{th:"รถ",rom:"rot",zh:"车",tip:"交通方式名称里的高频前缀。"},
+{th:"รถแดง",rom:"rot-daeng",zh:"红色双条车",tip:"清迈常见拼车交通；先确认路线和每人价。"},
+{th:"สองแถว",rom:"song-thaeo",zh:"双条车",tip:"通常拼车；包车和拼车收费不同。"},
+{th:"ตุ๊กตุ๊ก",rom:"tuk-tuk",zh:"突突车",tip:"上车前谈好整车、整段车费。"},
+{th:"สนามบิน",rom:"sa-nam-bin",zh:"机场",tip:"接送或问路常用目的地。"},
+{th:"โรงแรม",rom:"rong-raem",zh:"酒店",tip:"目的地、住宿对话里的关键词。"},
+{th:"วัด",rom:"wat",zh:"寺庙",tip:"常作为寺庙名称前缀。"},
+{th:"ประตูท่าแพ",rom:"pra-tu-tha-phae",zh:"塔佩门",tip:"清迈古城地标；给司机看泰文比只说拼音稳妥。"},
+{th:"ดอยสุเทพ",rom:"doi-su-thep",zh:"素贴山",tip:"山上寺庙目的地；上山交通价格不同于市内短程。"},
+{th:"กลับ",rom:"klap",zh:"回去／返回",tip:"返程接送和司机对话里常听到。"}]},
+{title:"购物与砍价",desc:"先辨“看”“买”“折扣”“收据”。",cards:[
+{th:"ซื้อ",rom:"sue",zh:"买",tip:"购物、交易对话中的核心词。"},
+{th:"ขาย",rom:"khai",zh:"卖",tip:"与 ไข่（蛋）近似拼音；看场景辨认。"},
+{th:"ดู",rom:"du",zh:"看",tip:"只想先看，可配合 ขอ…หน่อย。"},
+{th:"ลอง",rom:"long",zh:"试一试",tip:"试穿、试用时听到；与 ลง（下）拼音近似。"},
+{th:"อันนี้",rom:"an-ni",zh:"这个",tip:"指商品时很实用；可指给对方看。"},
+{th:"อันนั้น",rom:"an-nan",zh:"那个",tip:"指较远的商品。"},
+{th:"มีไหม",rom:"mi-mai",zh:"有吗？",tip:"问货品或尺寸有没有。"},
+{th:"ไม่มี",rom:"mai-mi",zh:"没有",tip:"店员回答缺货时可能听到。"},
+{th:"ลดได้ไหม",rom:"lot-dai-mai",zh:"可以便宜点吗？",tip:"市场可礼貌问；明码标价处未必议价。"},
+{th:"ลด",rom:"lot",zh:"减价／打折",tip:"促销、砍价对话里常听到。"},
+{th:"อีก",rom:"ik",zh:"再／另一个",tip:"可表示还要、再来一次，听上下文。"},
+{th:"พอ",rom:"pho",zh:"够了",tip:"停止加量或结束讲价时可说。"},
+{th:"เงินสด",rom:"ngoen-sot",zh:"现金",tip:"支付方式；先问清是否收卡。"},
+{th:"บัตร",rom:"bat",zh:"卡／票",tip:"依场景指银行卡、门票等；与 บาท（泰铢）拼音近似。"},
+{th:"จ่าย",rom:"jai",zh:"付款",tip:"结账或额外收费时注意。"},
+{th:"ใบเสร็จ",rom:"bai-set",zh:"收据",tip:"押金、租赁、购物后要书面凭据。"},
+{th:"ใหม่",rom:"mai",zh:"新的",tip:"商品、房间或车辆状态描述中会听到。"},
+{th:"แพงไป",rom:"phaeng-pai",zh:"太贵了",tip:"议价时可说；语气保持礼貌。"}]},
+{title:"住宿",desc:"听懂房间、设备、押金与退款。",cards:[
+{th:"ห้อง",rom:"hong",zh:"房间",tip:"房型、房号、房间问题。"},
+{th:"ห้องพัก",rom:"hong-phak",zh:"客房／住宿房间",tip:"柜台问房型时常听到。"},
+{th:"จอง",rom:"chong",zh:"预订",tip:"核对订单、日期时会听到。"},
+{th:"คืน",rom:"khuen",zh:"夜／归还",tip:"住宿问几晚时是“夜”；退款语境又可能是“归还”。"},
+{th:"กี่คืน",rom:"ki-khuen",zh:"几晚？",tip:"入住时核对天数。"},
+{th:"เช็กอิน",rom:"chek-in",zh:"办理入住",tip:"英语 check-in 借词；柜台常用。"},
+{th:"เช็กเอาต์",rom:"chek-ao",zh:"办理退房",tip:"英语 check-out 借词；确认退房时间。"},
+{th:"กุญแจ",rom:"kun-jae",zh:"钥匙",tip:"领取或遗失房间钥匙时用。"},
+{th:"แอร์",rom:"ae",zh:"空调",tip:"房间设备；借自英语 air。"},
+{th:"น้ำร้อน",rom:"nam-ron",zh:"热水",tip:"检查洗浴设施是否正常。"},
+{th:"ไม่ทำงาน",rom:"mai-tham-ngan",zh:"不工作／不能用",tip:"描述空调、热水等设备故障。"},
+{th:"เสีย",rom:"sia",zh:"坏了／损坏",tip:"设备故障，也可能在索赔时表示物品损坏。"},
+{th:"สะอาด",rom:"sa-at",zh:"干净",tip:"房间卫生评价。"},
+{th:"ผ้าเช็ดตัว",rom:"pha-chet-tua",zh:"毛巾",tip:"入住前核对配备，避免退房争议。"},
+{th:"ราคาเท่าไหร่",rom:"ra-kha-thao-rai",zh:"价格是多少？",tip:"问房价时确认每晚、税费和押金。"},
+{th:"มัดจำ",rom:"mat-jam",zh:"押金／订金",tip:"入住或租车前问清金额、退还条件并索取收据。"},
+{th:"คืนเงิน",rom:"khuen-ngoen",zh:"退款／退钱",tip:"押金退还或取消订单时听到。"}]},
+{title:"拒绝、不满与应急",desc:"把“不”“额外付费”“求助”听清。",cards:[
+{th:"ไม่",rom:"mai",zh:"不／没有",tip:"最重要的否定词；先听句首。"},
+{th:"ไม่ต้อง",rom:"mai-tong",zh:"不需要／不用",tip:"拒绝额外服务时可说。"},
+{th:"ช่วยด้วย",rom:"chuai-duai",zh:"救命／请帮忙！",tip:"遇到危险需要立即求助时喊。"},
+{th:"ช่วย",rom:"chuai",zh:"帮助",tip:"请求帮助，也会听到别人主动帮忙。"},
+{th:"ตำรวจ",rom:"tam-ruat",zh:"警察",tip:"纠纷或紧急情况中的关键词。"},
+{th:"โรงพยาบาล",rom:"rong-pha-ya-ban",zh:"医院",tip:"身体不适需就医时用。"},
+{th:"เจ็บ",rom:"chep",zh:"疼／受伤",tip:"描述外伤或疼痛。"},
+{th:"ปวด",rom:"puat",zh:"痛",tip:"常和身体部位连用。"},
+{th:"แพ้",rom:"phae",zh:"过敏／输",tip:"饮食语境是过敏；仅说这一个词不足以说明过敏原。"},
+{th:"อันตราย",rom:"an-ta-rai",zh:"危险",tip:"安全提示或风险提醒。"},
+{th:"โทร",rom:"tho",zh:"打电话",tip:"求助、叫车或联系酒店时。"},
+{th:"มีปัญหา",rom:"mi-pan-ha",zh:"有问题",tip:"表达订单、房间或收费出了问题。"},
+{th:"ผิด",rom:"phit",zh:"错／不对",tip:"核对账单或路线时。"},
+{th:"ถูกต้อง",rom:"thuk-tong",zh:"正确",tip:"确认单据或信息无误时。"},
+{th:"ไม่ตกลง",rom:"mai-tok-long",zh:"不同意",tip:"对未事先说明的收费，明确表示尚未同意。"},
+{th:"ตกลง",rom:"tok-long",zh:"同意／说定了",tip:"确认交易时听到；不要在不清楚总价时随口答应。"},
+{th:"จ่ายเพิ่ม",rom:"jai-phoem",zh:"另外付款／加钱",tip:"活动、交通、按摩项目里的额外费用信号。"},
+{th:"ฟรี",rom:"fri",zh:"免费",tip:"借自英语 free；确认是否真的包含所有项目。"},
+{th:"ไม่รวม",rom:"mai-ruam",zh:"不包括",tip:"套餐、车费或门票中出现时，要问缺哪些项目。"},
+{th:"ขอดู",rom:"kho-du",zh:"请让我看一下",tip:"看账单、照片或合同；比争执先核对证据。"},
+{th:"หนังสือเดินทาง",rom:"nang-sue-doen-thang",zh:"护照",tip:"租赁押证件时听到；保管好原件。"},
+{th:"ต้อง",rom:"tong",zh:"必须／需要",tip:"“你必须……”的信号；听后确认依据和费用。"}]},
+{title:"听懂当地人：泰北话与标准泰语的差异",desc:"只为识别听到的是哪种说法；同一词不能判定一个人的来历。",cards:[
+{th:"คำเมือง",rom:"kham-mueang",zh:"泰北话／Kham Mueang",tip:"当地语言名称之一；书写和口音有地域差异。"},
+{th:"กาด",rom:"kat",zh:"市场（泰北话）",tip:"对照标准泰语 ตลาด；地名“กาดหลวง”中也会见到。"},
+{th:"อู้",rom:"u",zh:"说话（泰北话）",tip:"对照标准泰语 พูด；“อู้คำเมือง”是说泰北话。"},
+{th:"ลำ",rom:"lam",zh:"好吃（泰北话）",tip:"对照标准泰语 อร่อย；在谈食物时最实用。"},
+{th:"บ่",rom:"bo",zh:"不（泰北话等）",tip:"对照标准泰语 ไม่；东北话等也用，不能凭一个词断定是泰北话。"},
+{th:"เจ้า",rom:"chao",zh:"泰北口语礼貌／语气尾词",tip:"与标准泰语礼貌尾词部分功能相近，但不能机械替换 ค่ะ／ครับ。"},
+{th:"กิ๋น",rom:"kin",zh:"吃（泰北话）",tip:"对照标准泰语 กิน；这里无声调拼音相同，实际声调有差异。"},
+{th:"ซาว",rom:"sao",zh:"二十（泰北话）",tip:"对照标准泰语 ยี่สิบ；听报价时特别有用。"},
+{th:"แอ่ว",rom:"aeo",zh:"逛／游玩（泰北话）",tip:"对照标准泰语 เที่ยว；听到可能在说出游。"},
+{th:"ฮู้",rom:"hu",zh:"知道（泰北话）",tip:"对照标准泰语 รู้；留意开头的 h 音。"},
+{th:"ฮ้อน",rom:"hon",zh:"热（泰北话）",tip:"对照标准泰语 ร้อน；天气或食物温度场景。"}]}
+];
+const dialect=[
+[{th:"กาด",rom:"kat",zh:"市场"},{th:"ตลาด",rom:"ta-lat",zh:"市场"}],
+[{th:"อู้",rom:"u",zh:"说话"},{th:"พูด",rom:"phut",zh:"说话"}],
+[{th:"ลำ",rom:"lam",zh:"好吃"},{th:"อร่อย",rom:"a-roi",zh:"好吃"}],
+[{th:"บ่",rom:"bo",zh:"不"},{th:"ไม่",rom:"mai",zh:"不"}],
+[{th:"เจ้า",rom:"chao",zh:"礼貌／语气尾词"},{th:"ค่ะ / ครับ",rom:"kha / khrap",zh:"标准泰语礼貌尾词（非一一对应）"}],
+[{th:"กิ๋น",rom:"kin",zh:"吃"},{th:"กิน",rom:"kin",zh:"吃"}],
+[{th:"ซาว",rom:"sao",zh:"二十"},{th:"ยี่สิบ",rom:"yi-sip",zh:"二十"}],
+[{th:"แอ่ว",rom:"aeo",zh:"逛／游玩"},{th:"เที่ยว",rom:"thiao",zh:"旅游／游玩"}],
+[{th:"ฮู้",rom:"hu",zh:"知道"},{th:"รู้",rom:"ru",zh:"知道"}],
+[{th:"ฮ้อน",rom:"hon",zh:"热"},{th:"ร้อน",rom:"ron",zh:"热"}]
+];
+const patterns=[
+{name:"礼貌请求",formula:{th:"ขอ…หน่อย",rom:"kho ... noi",zh:"麻烦给我／让我……一下"},tip:"หน่อย 是缓和语气的小词；把中间换成物品或动作。",examples:[{th:"ขอน้ำหน่อย",rom:"kho nam noi",zh:"请给我一点水"},{th:"ขอดูหน่อย",rom:"kho du noi",zh:"请让我看一下"},{th:"ขอใบเสร็จหน่อย",rom:"kho bai-set noi",zh:"请给我收据"}]},
+{name:"问总价",formula:{th:"…เท่าไหร่",rom:"... thao-rai",zh:"……多少／多少钱？"},tip:"上车、下单、付款前问；再确认每人、整车、往返和包含项目。",examples:[{th:"ราคาเท่าไหร่",rom:"ra-kha thao-rai",zh:"价格是多少？"},{th:"ทั้งหมดเท่าไหร่",rom:"thang-mot thao-rai",zh:"总共多少钱？"},{th:"ไปประตูท่าแพเท่าไหร่",rom:"pai pra-tu tha-phae thao-rai",zh:"去塔佩门多少钱？"}]},
+{name:"问能不能",formula:{th:"…ได้ไหม",rom:"... dai-mai",zh:"……可以吗？"},tip:"提出请求；对方若说 ไม่ได้，就是“不可以”。",examples:[{th:"ลดได้ไหม",rom:"lot dai-mai",zh:"可以便宜点吗？"},{th:"จ่ายเงินสดได้ไหม",rom:"jai ngoen-sot dai-mai",zh:"可以付现金吗？"},{th:"ขอใบเสร็จได้ไหม",rom:"kho bai-set dai-mai",zh:"可以给收据吗？"}]}
+];
+/* “可能说什么”是辨认线索，不代表听到这些话的人一定有恶意。 */
+const scams=[
+{cat:"交通",name:"双条车选客",hear:{th:"ไปไม่ได้",rom:"pai mai-dai",zh:"去不了"},english:"“Not going there.”",truth:"可能只是司机路线不顺，也可能转而推包车。不要把拒载直接当作骗局。",reply:{th:"ราคาเท่าไหร่",rom:"ra-kha thao-rai",zh:"价格是多少？"},action:"上车前说清目的地、是否拼车和每人单程价；不合适就换车。"},
+{cat:"交通",name:"双条车绕路／临时改站",hear:{th:"ไปอีกที่ก่อน",rom:"pai ik thi kon",zh:"先去另一个地方"},english:"“One stop first.”",truth:"拼车可能接送他人；若与事先约定的直达或时间明显不符，应重新确认。",reply:{th:"ไม่เอา ขอบคุณ",rom:"mai-ao khop-khun",zh:"不了，谢谢"},action:"出发前确认路线与是否接其他乘客；路线不符时在安全地点下车。"},
+{cat:"交通",name:"突突车报价含糊",hear:{th:"สองร้อยบาท",rom:"song-roi bat",zh:"两百泰铢"},english:"“Special price, only 200.”",truth:"突突车通常事先谈价；关键是这笔钱指整车还是每人、单程还是往返。",reply:{th:"ทั้งหมดเท่าไหร่",rom:"thang-mot thao-rai",zh:"总共多少钱？"},action:"用数字当面确认整车总价和目的地，再上车。"},
+{cat:"购物",name:"宝石店／珠宝展销",hear:{th:"ราคาพิเศษ",rom:"ra-kha phi-set",zh:"特别价格"},english:"“Government sale, only today.”",truth:"“政府特卖”“只此一天”“可转卖赚钱”都是需要独立核实的推销说法。",reply:{th:"ไม่เอา ขอบคุณ",rom:"mai-ao khop-khun",zh:"不了，谢谢"},action:"别在陌生人安排的店里仓促付款；离开后独立查店名、退货条款和证书。"},
+{cat:"活动",name:"大象营／丛林飞跃临时加价",hear:{th:"ไม่รวม",rom:"mai-ruam",zh:"不包含"},english:"“Transfer / insurance / photos extra.”",truth:"可能是套餐范围不同；付款前应列清接送、保险、餐、装备和照片是否包含。",reply:{th:"ทั้งหมดเท่าไหร่",rom:"thang-mot thao-rai",zh:"总共多少钱？"},action:"对照订单书面清单；现场新增项目可以拒绝，保留截图和收据。"},
+{cat:"押金",name:"按摩店临时押金或额外项目",hear:{th:"มัดจำ",rom:"mat-jam",zh:"押金／订金"},english:"“Deposit first; extra service later.”",truth:"押金或附加服务必须提前讲明金额与退还条件，不能只听口头承诺。",reply:{th:"ขอใบเสร็จหน่อย",rom:"kho bai-set noi",zh:"请给我收据"},action:"先看价目表，确认时长、项目、服务费和押金；不接受就离开。"},
+{cat:"押金",name:"租摩托车“车损”索赔",hear:{th:"ค่าซ่อม",rom:"kha-som",zh:"维修费"},english:"“You made this scratch.”",truth:"损伤归属和金额需要证据；不能只凭口头指认。",reply:{th:"ขอดู",rom:"kho-du",zh:"请让我看一下"},action:"取车时拍全车照片视频，保存合同与押金凭据；争议时要求前后照片和书面明细。"},
+{cat:"寺院",name:"寺院旁主动“帮你祈福”后要钱",hear:{th:"ทำบุญ",rom:"tham-bun",zh:"做功德／捐献"},english:"“Blessing for you, donation now.”",truth:"自愿捐献与未经同意后追讨费用不同；不必接受陌生人主动安排的仪式。",reply:{th:"ไม่เอา ขอบคุณ",rom:"mai-ao khop-khun",zh:"不了，谢谢"},action:"礼貌拒绝并离开；正规捐献可在寺内明确标示处自行决定。"},
+{cat:"软性施压",name:"泰式英语里的“没问题”",hear:{th:"ไม่ต้องห่วง",rom:"mai-tong huang",zh:"不用担心"},english:"“No problem.” “Up to you.” “Only today.”",truth:"这些话本身并非骗局；若同时催你立即付款、不给书面总价，就先停下来。",reply:{th:"ไม่เอา ขอบคุณ",rom:"mai-ao khop-khun",zh:"不了，谢谢"},action:"用英语说 “Please write the total price and what is included.” 看清后再决定。"}
+];
+/* 2026-09 整理的宽区间，仅供预算与识别异常报价，不是官方固定价。 */
+const prices=[
+{name:"市内红色双条车（拼车）",range:"฿30–60",unit:"每人／单程",note:"路线、夜间和人数会影响报价；包车另计。"},
+{name:"市内突突车短程",range:"฿100–200",unit:"整车／单程",note:"通常谈价，不应预期打表；上车前确认总价。"},
+{name:"机场至古城车程",range:"฿150–250",unit:"整车／单程",note:"依车型、叫车平台和拥堵变动。"},
+{name:"125cc 摩托车租赁",range:"฿150–350",unit:"每天",note:"车况、旺季和租期差异大；押金另问，核对驾照与保险。"},
+{name:"街边一餐",range:"฿40–100",unit:"每份",note:"旅游区、肉类和份量会抬高价格。"},
+{name:"清迈咖喱面",range:"฿50–120",unit:"每碗",note:"老店与景区店不同。"},
+{name:"传统泰式按摩",range:"฿200–400",unit:"每小时",note:"精品 SPA、油压和小费另算；先看公开价目。"},
+{name:"古城寺庙",range:"฿0–100",unit:"每人／处",note:"寺庙政策不同；捐献不等于门票。"},
+{name:"素贴山寺庙",range:"฿30–100",unit:"每人／处",note:"门票、缆车与上山交通分别核对。"},
+{name:"茵他侬国家公园",range:"฿200–400",unit:"外国成人／人",note:"车辆、园内其他景点可能另收；以入口公告为准。"},
+{name:"大象营半日项目",range:"฿1,800–3,500",unit:"每人／半日",note:"项目内容差异大；参考 Elephant Nature Park 官方半日价 ฿2,500。"},
+{name:"丛林飞跃套餐",range:"฿1,800–3,000",unit:"每人／套餐",note:"参考 Skyline 官方起价 ฿2,250–2,450；先核对接送和保险。"}
+];
+const sources=[
+{name:"泰北话词汇与用法：ThaiPod101（2026）",url:"https://www.thaipod101.com/blog/2026/05/28/dialects-in-thai/"},
+{name:"泰北话语法与地域差异：Elon Thai Grammar",url:"https://elon.io/grammar/thai/variation/northern"},
+{name:"清迈交通参考：Visit Thailand Today（2026）",url:"https://www.visitthailandtoday.com/guides/chiang-mai-city-guide"},
+{name:"日常消费参考：SpendSanity 清迈价目（2026）",url:"https://spendsanity.com/thailand/chiang-mai"},
+{name:"大象项目：Elephant Nature Park 官方预订页",url:"https://elephantnaturepark.org/book-now/"},
+{name:"丛林飞跃：Skyline Jungle Luge 官方套餐页",url:"https://skylinejungleluge.com/packages/"}
+];
+const triggerWords=["ไม่","ได้","ไม่ได้","ราคา","เท่าไหร่","บาท","ทั้งหมด","แพง","ถูก","หนึ่ง","สอง","สาม","สิบ","ยี่สิบ","ร้อย","เอา","ไม่เอา","ใส่","ไม่ใส่","เผ็ด","ไม่เผ็ด","ไป","ถึง","ลง","ซ้าย","ขวา","มัดจำ","จ่ายเพิ่ม","ไม่รวม","บ่"];
+const all=lessons.flatMap((lesson,li)=>lesson.cards.map((card,ci)=>({...card,id:`${li}-${ci}`,lesson:li})));
+const triggers=triggerWords.map(th=>all.find(x=>x.th===th)).filter(Boolean);
+const key="chiangmai-ear-v1";
+let progress={learned:[],quizScores:[]};let storageOK=true;
+try{const saved=JSON.parse(localStorage.getItem(key)||"null");if(saved){progress.learned=Array.isArray(saved.learned)?saved.learned:[];progress.quizScores=Array.isArray(saved.quizScores)?saved.quizScores:[]}}catch(e){storageOK=false}
+function save(){try{localStorage.setItem(key,JSON.stringify(progress));storageOK=true}catch(e){storageOK=false}}
+const state={page:"home",lesson:0,card:0,trigger:0,filter:"全部",query:"",quiz:null};
+const app=document.getElementById("app"),title=document.getElementById("title"),back=document.getElementById("back"),search=document.getElementById("search"),nav=document.getElementById("nav");
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[c])}
+function tri(o,compact=false){return `<div class="triplet${compact?" compact":""}"><div class="thai" lang="th">${esc(o.th)}</div><div class="roman">${esc(o.rom)}</div><div class="zh">${esc(o.zh)}</div></div>`}
+function entryCard(x,showLesson=false){return `<article class="result">${showLesson?`<span class="pill">第 ${x.lesson+1} 课 · ${esc(lessons[x.lesson].title)}</span>`:""}${tri(x)}<div class="tip"><b>用法提示：</b>${esc(x.tip)}</div></article>`}
+function pct(n,d){return Math.round((n/d)*100)}
+function renderHome(){let learned=progress.learned.filter(id=>all.some(x=>x.id===id)).length;let best=progress.quizScores.length?Math.max(...progress.quizScores.map(x=>x.score)):null;return `<section class="hero"><div class="eyebrow">Chiang Mai · Pocket Ear</div><h1>听到关键词，<br>先别急着答应。</h1><p>用短词抓住价格、否定、加钱和目的地；听不准就请对方写出总价。</p><div class="statrow"><div class="stat"><strong>${learned}/${all.length}</strong><span>已学词条</span></div><div class="stat"><strong>${best===null?"—":best+"/10"}</strong><span>测验最高分</span></div></div></section><div class="sectionhead"><h2>随手打开</h2><span>5 个入口</span></div><div class="grid"><button class="entrylink" data-go="triggers"><span class="emoji">👂</span><b>听觉触发词</b><small>听到就要反应 · ${triggers.length} 词</small></button><button class="entrylink" data-go="lessons"><span class="emoji">🗂️</span><b>场景课</b><small>8 课 · ${all.length} 张卡</small></button><button class="entrylink" data-go="patterns"><span class="emoji">🧩</span><b>句型骨架</b><small>3 个模板，直接替换</small></button><button class="entrylink" data-go="scams"><span class="emoji">🛡️</span><b>防坑手册</b><small>听懂施压与额外收费</small></button><button class="entrylink wide" data-go="prices"><span class="emoji">฿</span><b>价格参照</b><small>看区间、计价单位与现场核对点</small></button></div><div class="sectionhead"><h2>出发前记住</h2></div><div class="panel"><p>罗马拼音为近似读音，<b>未标声调</b>。泰语只听到半句时，不要凭一个词判断对方意图。价格、路线、押金和活动包含项目，尽量让对方写下来。</p><p class="micro">资料整理：2026-09 · 全部内容已内嵌，断网仍可使用。${storageOK?"学习进度保存在本机浏览器。":"当前浏览器未能保存进度；请检查隐私模式设置。"}</p></div><button class="btn primary" data-go="quiz">开始 10 题测验 →</button><div style="margin-top:22px">${renderSources()}</div>`}
+function renderLessons(){return `<div class="sectionhead"><h2>8 个场景课</h2><span>已学 ${progress.learned.length}/${all.length}</span></div><p class="lead">每张卡先认泰文，再看拼音和中文。标记“已学会”后刷新仍保留。</p>${lessons.map((l,i)=>{let n=l.cards.filter((_,j)=>progress.learned.includes(`${i}-${j}`)).length;return `<button class="lessonrow" data-lesson="${i}"><span class="num">${i+1}</span><span style="flex:1"><b>${esc(l.title)}</b><small>${esc(l.desc)} · ${n}/${l.cards.length}</small></span><span class="arrow">›</span></button>`}).join("")}`}
+function renderLesson(){let l=lessons[state.lesson],x=l.cards[state.card],id=`${state.lesson}-${state.card}`,done=progress.learned.includes(id),n=l.cards.filter((_,i)=>progress.learned.includes(`${state.lesson}-${i}`)).length;return `<div class="between"><span class="pill">第 ${state.lesson+1} 课</span><span class="meta">${state.card+1} / ${l.cards.length}</span></div><div class="sectionhead" style="margin-top:12px"><h2>${esc(l.title)}</h2></div><p class="lead">${esc(l.desc)}</p><div class="bar" aria-label="本课已学 ${n} 张"><i style="width:${pct(n,l.cards.length)}%"></i></div><article class="learncard"><div class="cardtop"><span class="pill ${done?"":"warn"}">${done?"✓ 已学会":"听到就辨认"}</span><span class="meta">卡片 ${state.card+1}</span></div><div class="thai" lang="th">${esc(x.th)}</div><div class="roman">${esc(x.rom)}</div><div class="zh">${esc(x.zh)}</div><div class="tip"><b>用法提示：</b>${esc(x.tip)}</div></article><div class="btnrow"><button class="btn" data-card-step="-1" ${state.card===0?"disabled":""}>← 上一张</button><button class="btn primary" data-card-step="1" ${state.card===l.cards.length-1?"disabled":""}>下一张 →</button></div><button class="btn ${done?"selected":"orange"}" style="width:100%" data-mark="${id}">${done?"✓ 已学会 · 点按取消":"标记已学会"}</button><button class="btn" style="width:100%;margin-top:10px" data-go="lessons">返回 8 课目录</button>${state.lesson===7?renderDialect():""}`}
+function renderDialect(){return `<div class="sectionhead"><h2>泰北话 ↔ 标准泰语</h2></div><p class="lead">左边是可能在清迈听到的泰北话，右边是标准泰语。各地口音与书写形式会变化；单个词不能判定说话者来自哪里。</p><div class="tablewrap"><table><thead><tr><th>泰北话 Kham Mueang</th><th>标准泰语</th></tr></thead><tbody>${dialect.map(p=>`<tr><td>${tri(p[0],true)}</td><td>${tri(p[1],true)}</td></tr>`).join("")}</tbody></table></div>`}
+function renderTriggers(){let x=triggers[state.trigger];return `<div class="sectionhead"><h2>听觉触发词</h2><span>${state.trigger+1}/${triggers.length}</span></div><p class="lead">只要听见这些词，就先暂停、确认上下文。点击下方词条可跳转。</p><article class="learncard"><div class="cardtop"><span class="trigger-word">听到就要反应</span><span class="meta">${esc(lessons[x.lesson].title)}</span></div><div class="thai" lang="th">${esc(x.th)}</div><div class="roman">${esc(x.rom)}</div><div class="zh">${esc(x.zh)}</div><div class="tip"><b>注意：</b>${esc(x.tip)}</div></article><div class="btnrow"><button class="btn" data-trigger-step="-1" ${state.trigger===0?"disabled":""}>← 上一个</button><button class="btn primary" data-trigger-step="1" ${state.trigger===triggers.length-1?"disabled":""}>下一个 →</button></div><div class="chips" aria-label="快速选词">${triggers.map((t,i)=>`<button class="chip ${i===state.trigger?"active":""}" data-trigger="${i}">${esc(t.zh)}</button>`).join("")}</div>`}
+function renderPatterns(){return `<div class="sectionhead"><h2>3 个万能句型</h2></div><p class="lead">需要开口时，把中间的词替换；听不准让对方写出价格。</p>${patterns.map((p,i)=>`<article class="patterncard"><span class="pill">模板 ${i+1}</span><h3>${esc(p.name)}</h3>${tri(p.formula)}<div class="tip">${esc(p.tip)}</div><div class="examples">${p.examples.map(e=>`<div class="example">${tri(e,true)}</div>`).join("")}</div></article>`).join("")}`}
+function renderScams(){let cats=["全部",...new Set(scams.map(s=>s.cat))];let rows=scams.filter(s=>state.filter==="全部"||s.cat===state.filter);return `<div class="sectionhead"><h2>防坑手册</h2><span>${scams.length} 个线索</span></div><div class="notice">这里的“可能说什么”是辨认线索，不代表听到这句话的人就在骗人。关键是核对总价、范围、凭据和你的同意。</div><div class="chips">${cats.map(c=>`<button class="chip ${state.filter===c?"active":""}" data-filter="${esc(c)}">${esc(c)}</button>`).join("")}</div>${rows.map(s=>`<article class="scamcard"><span class="pill warn">${esc(s.cat)}</span><h3>${esc(s.name)}</h3><div class="label">对方可能说什么</div>${tri(s.hear)}<div class="micro" style="margin-top:6px">也可能用英语说：${esc(s.english)}</div><div class="label">真实意思／要核对的事</div><div class="meaning">${esc(s.truth)}</div><div class="label">你该怎么回</div>${tri(s.reply)}<div class="action">${esc(s.action)}</div></article>`).join("")}`}
+function renderPrices(){return `<div class="sectionhead"><h2>清迈价格参照</h2><span>泰铢 THB</span></div><div class="notice">2026-09 整理的宽区间，仅作行前参考，随季节、路线、店家和套餐变动。超出区间不自动等于欺诈；付款前看现场公布价格或书面报价。</div><div class="tablewrap" style="margin-top:14px"><table><thead><tr><th>项目</th><th>参考区间与单位</th><th>现场核对</th></tr></thead><tbody>${prices.map(p=>`<tr><td>${esc(p.name)}</td><td><strong>${esc(p.range)}</strong><br>${esc(p.unit)}</td><td>${esc(p.note)}</td></tr>`).join("")}</tbody></table></div><div class="panel" style="margin-top:15px"><h3>最快的核对方式</h3><p>问清“每人还是整车”“单程还是往返”“总价是否包含接送、门票、保险、照片、税费”。租赁或付押金要收据与交接照片。</p></div>${renderSources()}`}
+function renderSources(){return `<details class="panel sources"><summary><b>资料来源与离线说明</b></summary><p class="micro">下列链接仅用于日后人工复核；应用不加载它们，也不调用网络。当前词条内容与功能已全部内嵌。</p>${sources.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.name)}</a>`).join("")}</details><div class="panel"><h3>待核对清单</h3><ol class="checklist"><li>泰北话在清迈以外地区可能有不同口音和写法；出行前可请当地母语者核听第 8 课，尤其是 เจ้า、บ่ 的实际语境。</li><li>拼音不标声调；ไกล／ใกล้、กิน／กิ๋น 等不能只凭此拼音判断。</li><li>景点、园区、活动与租车的当日价格、押金和包含项目需看现场书面说明。</li><li>本版未把无法可靠核实的完整推销台词收进词表；防坑页的短句只是辨认线索。</li></ol></div>`}
+function norm(s){return String(s).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[\s\-·'.,/?！？。，“”]/g,"")}
+function searchRows(){let q=norm(state.query.trim());if(!q)return `<div class="panel"><h2>搜全部内容</h2><p>输入中文或罗马拼音的一部分，例如“押金”“mat jam”“不包括”。</p></div>`;let terms=q.split(/\s+/).filter(Boolean);const has=s=>terms.every(t=>norm(s).includes(t));let found=all.filter(x=>has(`${x.th} ${x.rom} ${x.zh} ${x.tip} ${lessons[x.lesson].title}`));let other=[];patterns.forEach(p=>{[p.formula,...p.examples].forEach(x=>{if(has(`${x.th} ${x.rom} ${x.zh} ${p.name}`))other.push({type:`句型 · ${p.name}`,text:tri(x,true)})})});dialect.forEach(pair=>pair.forEach(x=>{if(has(`${x.th} ${x.rom} ${x.zh}`)&&!found.some(y=>y.th===x.th))other.push({type:"泰北话对照",text:tri(x,true)})}));scams.forEach(x=>{if(has(`${x.name} ${x.cat} ${x.hear.th} ${x.hear.rom} ${x.hear.zh} ${x.truth} ${x.action}`))other.push({type:`防坑 · ${x.cat}`,text:`<b>${esc(x.name)}</b><p>${esc(x.truth)}</p>`})});prices.forEach(x=>{if(has(`${x.name} ${x.range} ${x.unit} ${x.note}`))other.push({type:"价格参照",text:`<b>${esc(x.name)}</b><p>${esc(x.range)} · ${esc(x.unit)}</p>`})});return `<div class="sectionhead"><h2>搜索结果</h2><span>${found.length+other.length} 条</span></div><p class="lead">匹配中文、泰文或罗马拼音；拼音可只输入一部分。</p>${found.map(x=>entryCard(x,true)).join("")}${other.map(x=>`<article class="result"><span class="pill">${esc(x.type)}</span>${x.text}</article>`).join("")}${found.length+other.length===0?`<div class="empty">没有找到。试试更短的中文或拼音，例如“押金”“mai”。</div>`:""}`}
+function shuffle(a){let b=[...a];for(let i=b.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b}
+function startQuiz(){let pool=all.filter(x=>!x.tip.includes("〔待核对〕")&&x.lesson!==7);let unique=[...new Map(pool.map(x=>[x.zh,x])).values()];let questions=shuffle(unique).slice(0,10).map(x=>({x,options:shuffle([x.zh,...shuffle(unique.filter(y=>y.zh!==x.zh)).slice(0,3).map(y=>y.zh)])}));state.quiz={questions,index:0,selected:null,score:0,done:false};state.page="quiz";render();window.scrollTo(0,0)}
+function renderQuiz(){let q=state.quiz;if(!q)return `<div class="sectionhead"><h2>10 题速测</h2></div><div class="panel"><p>看到泰文选中文意思。每次随机 10 题，答完保存分数到本机浏览器。</p><p class="micro">题目选自标准泰语课，避开泰北话地域变体与标记〔待核对〕的词条。</p><button class="btn primary" style="width:100%;margin-top:10px" data-quiz-start>开始测验</button></div>${renderHistory()}`;if(q.done)return `<div class="panel" style="text-align:center"><span class="pill">本次完成</span><div class="score">${q.score}/10</div><p>得分已保存到本机浏览器。</p><button class="btn primary" data-quiz-start>再做 10 题</button></div>${renderHistory()}`;let item=q.questions[q.index],answered=q.selected!==null;return `<div class="between"><span class="pill">第 ${q.index+1} / 10 题</span><span class="meta">当前答对 ${q.score}</span></div><div class="bar"><i style="width:${pct(q.index,10)}%"></i></div><article class="learncard"><div class="cardtop"><span class="trigger-word">看泰文，选意思</span></div><div class="thai" lang="th">${esc(item.x.th)}</div><div class="roman">${answered?esc(item.x.rom):"先自己想一想"}</div><div class="tip">${answered?`正确答案：<b>${esc(item.x.zh)}</b> · ${esc(item.x.tip)}`:"选一个中文意思；答题后会显示提示。"}</div></article><div style="margin-top:14px">${item.options.map((o,i)=>`<button class="btn choice ${answered?(o===item.x.zh?"correct":o===q.selected?"wrong":""):""}" data-choice="${i}" ${answered?"disabled":""}>${String.fromCharCode(65+i)}. ${esc(o)}</button>`).join("")}</div>${answered?`<button class="btn primary" style="width:100%" data-quiz-next>${q.index===9?"查看得分":"下一题 →"}</button>`:""}`}
+function renderHistory(){return `<div class="panel"><h3>最近成绩</h3>${progress.quizScores.length?progress.quizScores.slice(-5).reverse().map(x=>`<p class="between"><span>${esc(x.when)}</span><b>${x.score}/10</b></p>`).join(""):`<p class="micro">还没有测验记录。</p>`}</div>`}
+function render(){const pages={home:"清迈听觉速查",lessons:"场景课",lesson:"场景课",triggers:"听觉触发词",patterns:"句型骨架",scams:"防坑手册",prices:"价格参照",quiz:"测验",search:"搜索"};title.textContent=pages[state.page]||pages.home;back.style.visibility=state.page==="home"?"hidden":"visible";app.innerHTML=({home:renderHome,lessons:renderLessons,lesson:renderLesson,triggers:renderTriggers,patterns:renderPatterns,scams:renderScams,prices:renderPrices,quiz:renderQuiz,search:searchRows})[state.page]();let items=[["home","⌂","首页"],["triggers","◉","听词"],["lessons","▣","场景"],["search","⌕","搜索"],["quiz","✦","测验"]];nav.innerHTML=items.map(([p,icon,label])=>`<button class="navbtn ${state.page===p||(p==="lessons"&&state.page==="lesson")?"on":""}" data-go="${p}"><span class="ni" aria-hidden="true">${icon}</span>${label}</button>`).join("")}
+function go(p){if(p==="search"){state.page="search";render();search.focus();return}state.page=p;state.query="";search.value="";render();window.scrollTo(0,0)}
+document.addEventListener("click",e=>{let b=e.target.closest("button");if(!b)return;if(b.dataset.go){go(b.dataset.go);return}if(b.dataset.lesson!==undefined){state.lesson=Number(b.dataset.lesson);state.card=0;go("lesson");return}if(b.dataset.cardStep){state.card=Math.max(0,Math.min(lessons[state.lesson].cards.length-1,state.card+Number(b.dataset.cardStep)));render();return}if(b.dataset.mark){let id=b.dataset.mark;progress.learned=progress.learned.includes(id)?progress.learned.filter(x=>x!==id):[...progress.learned,id];save();render();return}if(b.dataset.triggerStep){state.trigger=Math.max(0,Math.min(triggers.length-1,state.trigger+Number(b.dataset.triggerStep)));render();return}if(b.dataset.trigger!==undefined){state.trigger=Number(b.dataset.trigger);render();return}if(b.dataset.filter){state.filter=b.dataset.filter;render();return}if(b.hasAttribute("data-quiz-start")){startQuiz();return}if(b.dataset.choice!==undefined&&state.quiz&&!state.quiz.done&&state.quiz.selected===null){let q=state.quiz,item=q.questions[q.index];q.selected=item.options[Number(b.dataset.choice)];if(q.selected===item.x.zh)q.score++;render();return}if(b.hasAttribute("data-quiz-next")&&state.quiz){state.quiz.index++;state.quiz.selected=null;if(state.quiz.index>=10){state.quiz.done=true;progress.quizScores.push({score:state.quiz.score,when:new Date().toLocaleString("zh-CN")});progress.quizScores=progress.quizScores.slice(-20);save()}render();window.scrollTo(0,0)}});
+search.addEventListener("input",()=>{state.query=search.value;state.page="search";render()});
+back.addEventListener("click",()=>go(state.page==="lesson"?"lessons":"home"));
+render();
+</script>
+</body>
+</html>
