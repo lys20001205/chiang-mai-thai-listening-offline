@@ -298,7 +298,8 @@ if(window.speechSynthesis&&window.SpeechSynthesisUtterance){
 }else{audioNote="此浏览器不支持泰语朗读。";render()}
 if((location.protocol==="https:"||location.hostname==="localhost"||location.hostname==="127.0.0.1")&&"serviceWorker" in navigator){
   const manifest=document.createElement("link");manifest.rel="manifest";manifest.href="./manifest.webmanifest";document.head.appendChild(manifest);
-  navigator.serviceWorker.register("./sw.js",{scope:"./"}).then(()=>navigator.serviceWorker.ready).then(()=>{offlineState="已缓存：现在可以开飞行模式试用。";if(state.page==="home")render()}).catch(()=>{offlineState="缓存未完成，请联网刷新后重试。";if(state.page==="home")render()});
+  if(!navigator.onLine&&navigator.serviceWorker.controller){offlineState="正在离线使用已缓存版本。";if(state.page==="home")render()}
+  else navigator.serviceWorker.register("./sw.js",{scope:"./"}).then(()=>navigator.serviceWorker.ready).then(()=>{offlineState="已缓存：现在可以开飞行模式试用。";if(state.page==="home")render()}).catch(()=>{offlineState=navigator.serviceWorker.controller?"正在使用已缓存版本；联网后可刷新更新。":"缓存未完成，请联网刷新后重试。";if(state.page==="home")render()});
 }else if(location.protocol!=="file:"){
   offlineState="此浏览器未确认离线缓存；请用 iPhone Safari 打开 HTTPS 页面。";if(state.page==="home")render();
 }
