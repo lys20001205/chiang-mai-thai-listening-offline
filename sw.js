@@ -1,12 +1,14 @@
-const CACHE = 'chiangmai-ear-shell-v4';
+const CACHE = 'chiangmai-ear-shell-v5';
 const ROOT = self.registration.scope;
 const SHELL = new URL('./index.html', ROOT).href;
+const PRACTICE = new URL('./practice.html', ROOT).href;
 const MANIFEST = new URL('./manifest.webmanifest', ROOT).href;
+const ASSETS = [ROOT, SHELL, PRACTICE, MANIFEST];
 
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE);
-    await cache.addAll([ROOT, SHELL, MANIFEST]);
+    await cache.addAll(ASSETS);
     await self.skipWaiting();
   })());
 });
@@ -21,17 +23,23 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('fetch', event => {
   const request = event.request;
-  if (request.method !== 'GET' || request.mode !== 'navigate' || !request.url.startsWith(ROOT)) return;
+  if (request.method !== 'GET' || request.mode !== 'navigate') return;
+  const url = new URL(request.url);
+  url.search = '';
+  url.hash = '';
+  // Match known pages only. An offline practice URL must never become the old home page.
+  if (!ASSETS.includes(url.href)) return;
   event.respondWith((async () => {
+    const cache = await caches.open(CACHE);
     try {
       const response = await fetch(request);
       if (response.ok) {
-        const cache = await caches.open(CACHE);
-        event.waitUntil(cache.put(request, response.clone()));
+        try { await cache.put(url.href, response.clone()); } catch (_) { /* A full cache must not hide a valid online response. */ }
+        return response;
       }
-      return response;
+      return (await cache.match(url.href)) || response;
     } catch (_) {
-      return (await caches.match(request)) || (await caches.match(ROOT)) || (await caches.match(SHELL)) || Response.error();
+      return (await cache.match(url.href)) || Response.error();
     }
   })());
 });
