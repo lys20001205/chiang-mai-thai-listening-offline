@@ -1,4 +1,4 @@
-const CACHE = 'chiangmai-ear-shell-v7';
+const CACHE = 'chiangmai-ear-shell-v8';
 const ROOT = self.registration.scope;
 const SHELL = new URL('./index.html', ROOT).href;
 const PRACTICE = new URL('./practice.html', ROOT).href;

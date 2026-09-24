@@ -28,7 +28,7 @@ def main():
     q.evaluate('setPage("signs")');check(q.locator('.board').count()==0,'Practice novice entry does not start with words')
     q.locator('[data-letter-ready]').click();check(q.locator('.board').count()==1,'Practice skip preserves stages')
     q.evaluate('setPage("money")');check(q.locator('#money-form').count()==1,'Money form intact')
-   check('v1.2.0' in q.locator('body').inner_text(),file+' version')
+   check('v1.3.0' in q.locator('body').inner_text(),file+' version')
    check(q.evaluate('document.documentElement.scrollWidth<=innerWidth+1'),file+' mobile no overflow')
    q.close()
   check(not errors,'No JS errors: '+str(errors));b.close()
