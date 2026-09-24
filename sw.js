@@ -1,9 +1,10 @@
-const CACHE = 'chiangmai-ear-shell-v6';
+const CACHE = 'chiangmai-ear-shell-v7';
 const ROOT = self.registration.scope;
 const SHELL = new URL('./index.html', ROOT).href;
 const PRACTICE = new URL('./practice.html', ROOT).href;
+const ALPHABET = new URL('./alphabet.html', ROOT).href;
 const MANIFEST = new URL('./manifest.webmanifest', ROOT).href;
-const ASSETS = [ROOT, SHELL, PRACTICE, MANIFEST];
+const ASSETS = [ROOT, SHELL, PRACTICE, ALPHABET, MANIFEST];
 
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
