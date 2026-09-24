@@ -2,7 +2,7 @@ name: Integrate and verify letter-first learning
 on:
   push:
     branches: [main]
-    paths: [scripts/integrate_alphabet.py]
+    paths: [scripts/integrate_alphabet.py, .github/workflows/letter-course-integration.yml]
 permissions:
   contents: write
 concurrency:
@@ -18,7 +18,7 @@ jobs:
         run: python scripts/integrate_alphabet.py
       - name: Install test tools
         run: |
-          python -m pip install playwright==1.51.1
+          python -m pip install playwright==1.51.0
           python -m playwright install --with-deps chromium
       - name: Run new and existing regressions
         run: |
