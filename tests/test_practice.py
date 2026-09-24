@@ -44,6 +44,7 @@ def main():
         page.evaluate("setPage('money')")
         check(page.get_by_role('button', name='听音练习', exact=True).is_disabled(), 'No voice disables audio')
         check('未检测到本地泰语语音' in page.locator('#audio-status').inner_text(), 'No-voice notice')
+        check(page.locator('#app .pron').count() >= 1, 'Money Thai text shows pronunciation')
         nums = page.evaluate('NUMBERS.map(x=>x.n)')
         for n in nums:
             for unit in ['person', 'total', 'unknown']:
