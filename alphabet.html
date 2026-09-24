@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f5d50"><meta name="description" content="从单个泰语字母开始：44个辅音逐张学、元音位置、相似字形、拆字拼回标牌。">
+<title>从字母开始 · 清迈 Pocket Ear v1.2.0</title>
+<style>
+:root{--bg:#edf4ef;--paper:#fffefa;--ink:#163d34;--muted:#536b62;--line:#ccddd2;--accent:#0f6854;--soft:#e2f3e9;--warm:#fff2e1;--bad:#9d3423}*{box-sizing:border-box}body{margin:0;background:linear-gradient(150deg,#e7f2eb,#faf5eb);color:var(--ink);font:17px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}header,main,footer{max-width:800px;margin:auto;padding:16px}header{padding-bottom:0}a{color:var(--accent);overflow-wrap:anywhere}button,input{font:inherit}button,.button{display:inline-block;min-height:48px;border:1px solid var(--line);border-radius:14px;background:var(--paper);color:var(--ink);padding:10px 14px;cursor:pointer;text-decoration:none}button:disabled{opacity:.45;cursor:default}button:focus-visible,a:focus-visible{outline:3px solid #b96a16;outline-offset:3px}.primary{background:var(--accent);color:white}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.row>*{min-width:0}.between{justify-content:space-between}.grow{flex:1}.badge{font-size:12px;padding:4px 9px;border-radius:20px;background:var(--soft);font-weight:800;white-space:nowrap}.hero{margin:14px 0 0;padding:24px;border-radius:26px;color:white;background:linear-gradient(130deg,#0b6d53,#153d39)}.hero h1{margin:4px 0 8px;font-size:32px;line-height:1.3}.hero p{margin:0;color:#e0f1e9}.eyebrow{font-size:11px;letter-spacing:.13em;color:#bce8d5}.tabs{display:flex;gap:7px;overflow-x:auto;padding:14px 0 8px;scrollbar-width:thin}.tabs button{flex:none;font-size:14px}.tabs button[aria-current=page]{background:var(--accent);color:white}.card{padding:20px;margin:14px 0;background:var(--paper);border:1px solid var(--line);border-radius:24px;box-shadow:0 9px 25px #143c3309}.card h2,.card h3{margin:0 0 9px}h2{font-size:23px}h3{font-size:19px}.muted,small{color:var(--muted)}small{font-size:13px}.note{padding:12px 14px;border-radius:15px;background:var(--warm);margin:12px 0}.good{padding:14px;border-radius:15px;background:var(--soft);margin:12px 0}.wrong{padding:14px;border-radius:15px;background:var(--warm);color:var(--bad);margin:12px 0}.thai{font-family:"Thonburi","Leelawadee UI","Noto Sans Thai Looped","Garuda","Loma",Tahoma,sans-serif;line-height:1.8;font-weight:500}.glyph{font-size:116px;line-height:1.8;display:block;text-align:center;overflow-wrap:anywhere}.glyphbox{border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,#f1f8f3,#fffefa);padding:6px 12px;position:relative}.type{font-size:13px}.compare{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0}.compare>div{padding:10px;border:1px solid var(--line);border-radius:18px;text-align:center}.compare .thai{font-size:60px;display:block}.compare b{font-size:14px}.sound{font-size:22px;font-weight:700}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));gap:9px}.grid button{text-align:left}.grid .thai{display:block;font-size:38px}.lesson{width:100%;display:block;text-align:left;margin:9px 0}.lesson small{display:block}.choice{display:block;width:100%;margin:9px 0;min-height:74px}.choice .thai{font-size:45px}.bar{height:8px;background:#d9e7dc;border-radius:10px;overflow:hidden;margin:12px 0}.bar i{height:100%;display:block;background:var(--accent)}.parts{display:flex;flex-wrap:wrap;gap:8px;margin:13px 0}.part{min-width:68px;flex:1;text-align:center;padding:10px;border:1px solid var(--line);border-radius:15px}.part .thai{display:block;font-size:37px}.part small{display:block}.word{font-size:65px;text-align:center;margin:10px 0;overflow-wrap:anywhere}.slot{min-height:110px;background:#eef7f1;border:2px dashed #b3cdbd;border-radius:19px;padding:10px;text-align:center;font-size:54px;overflow-wrap:anywhere}.chips button .thai{font-size:38px}.full{width:100%;margin:8px 0}.status{font-size:13px;margin:8px 0}footer{padding-bottom:30px;font-size:14px}details{margin:14px 0}summary{cursor:pointer;min-height:44px}canvas{width:100%;height:190px;touch-action:none;border:1px dashed var(--line);border-radius:16px;display:block}.source a{display:block;margin:9px 0}.steps p{margin:10px 0}.intro-demo{font-size:44px;display:block;text-align:center;overflow-wrap:anywhere}.flag{font-size:12px;color:#8a4a22}button:hover:not(:disabled){border-color:#80ab92}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}@media(max-width:360px){header,main,footer{padding:12px}.hero{padding:18px}.hero h1{font-size:27px}.card{padding:15px}.glyph{font-size:100px}.compare .thai{font-size:52px}.word{font-size:50px}.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.grid button{padding:8px}.grid small{font-size:11px}.part{min-width:54px}.row>.button{flex:1}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+body[data-page="learn"] .hero,body[data-page="quiz"] .hero{display:none}.lesson-controls{position:sticky;bottom:0;background:rgba(237,244,239,.96);padding:10px 0 calc(10px + env(safe-area-inset-bottom));z-index:3}</style>
+</head>
+<body>
+<header><div class="row between"><a href="./index.html">← 首页</a><span class="badge">v1.2.0 · 字母起步</span></div><section class="hero"><div class="eyebrow">POCKET EAR · START WITH ONE LETTER</div><h1>先看懂一个字母。</h1><p>一次只学一张：看轮廓 → 比相似字 → 遮住再认。学过字母后，才把它们拼回短词。</p></section><nav class="tabs" id="nav" aria-label="字母课导航"></nav></header>
+<main id="app"></main>
+<footer><p id="storage" class="status" role="status"></p><p id="audio" class="status" role="status"></p><p id="offline" class="status" role="status">离线状态尚未确认。</p><a href="./practice.html">回速成练习</a> · <a href="./index.html">回原课程</a> · <a href="./alphabet.html" download="chiang-mai-alphabet.html">保存单文件备份</a><p>字形提示是本课设计的观察方法，不是官方笔顺。字体随设备变化；没有内嵌字体、真人录音或手写识别。字母认出后仍需要元音、收尾和声调规则才能独立读陌生词。</p></footer>
+<script>
+"use strict";
+const VERSION="1.2.0", STORE="chiangmai-alphabet-v1";
+const SOURCES=[
+["Unicode：字母与符号名称索引","https://www.unicode.org/charts/nameslist/n_0E00.html"],
+["ThaiPod101：44 个辅音及传统名称","https://www.thaipod101.com/thai-alphabet/"],
+["W3C：泰文位置、字形与声调组成","https://www.w3.org/TR/thai-lreq/"],
+["Richard Ishida：辅音、元音组合与字尾","https://r12a.github.io/scripts/thai/th"],
+["Thai Language Hut：店铺词汇","https://thailanguagehut.com/types-shops/"],
+["Lingopolo：กา（乌鸦）","https://lingopolo.org/thai/word/crow"],
+["Thai PBS：เปิด／ปิด，开与关","https://www.thaipbs.or.th/program/ChrisJobs/watch/102260"]
+];
+// 传统名称用于区别同音字母；不是把“鸡、蛋……”当成单个字母的意思。
+// 转写采用 Unicode 的无声调名称索引；拼词看独立的起音说明，不能连读字母名。
+const RAW=[
+["ก","ไก่","鸡","ko kai","k · 不送气","ข","没有独立小圆圈；先沿上方折弯、再看右侧竖杆。"],
+["ข","ไข่","蛋","kho khai","kh · 送气","ค","先看左上紧凑的小头，再沿线条往下；和 ค 的内圈位置对照。"],
+["ฃ","ขวด","瓶","kho khuat","kh · 送气","ข","看 ข 上方轮廓多出的折齿；这个字已不用于通常的现代拼写。"],
+["ค","ควาย","水牛","kho khwai","kh · 送气","ด","先找主体里面的小圈，再对照 ด 的内部折弯方向。"],
+["ฅ","คน","人","kho khon","kh · 送气","ค","与 ค 并排看顶端额外的折齿；这个字已不用于通常的现代拼写。"],
+["ฆ","ระฆัง","钟","kho rakhang","kh · 送气","ม","先看左侧折弯，再看右侧长杆；它比 ม 的结构更复杂。"],
+["ง","งู","蛇","ngo ngu","ng · 类似 sing 末尾的鼻音","ว","看小圈与斜向下方的线；和 ว 的包围轮廓不同。"],
+["จ","จาน","盘子","cho chan","ch · 不送气（/tɕ/）","ว","观察下方的小圈及上方伸出的横弯；和 ว 并排追踪线条。"],
+["ฉ","ฉิ่ง","小钹","cho ching","ch · 送气（/tɕʰ/）","ช","先看下部向两侧展开的结构；不要只看开头的小圈。"],
+["ช","ช้าง","大象","cho chang","ch · 送气（/tɕʰ/）","ซ","与 ซ 对照上方的折弯；下半部相似，要看完整轮廓。"],
+["ซ","โซ่","链条","so so","s","ช","重点比较左上轮廓的折齿；不要靠下半部单独判断。"],
+["ฌ","เฌอ","树","cho choe","ch · 送气（/tɕʰ/）","ณ","较宽的复合轮廓；从左到右看圈和竖杆的相对位置。"],
+["ญ","หญิง","女性","yo ying","y · 类似 yes 起音","ย","先看主体下面额外的下伸部分；比 ย 多了下部结构。"],
+["ฎ","ชฎา","尖冠","do chada","d","ฏ","两字的主体相似，重点并排看伸到下方的尾部。"],
+["ฏ","ปฏัก","赶牛刺棒","to patak","t · 不送气","ฎ","重点看下伸尾部的弯折；不要只记两字相似的主体。"],
+["ฐ","ฐาน","底座","tho than","th · 送气","ถ","下面还有一层下伸结构；和没有这层结构的 ถ 对照。"],
+["ฑ","มณโฑ","人物名","tho nangmontho","通常 th；个别词为 d，需查词","ท","比 ท 多出左部折齿和头部细节，先按完整轮廓辨认。"],
+["ฒ","ผู้เฒ่า","老者","tho phuthao","th · 送气","ณ","观察较宽的内部结构与顶端转折；不把它压成一个简单拱形。"],
+["ณ","เณร","沙弥","no nen","n","น","比 น 更宽、结构更多；从左右两边的圈和竖杆来区别。"],
+["ด","เด็ก","儿童","do dek","d","ต","上方较圆顺；和 ต 顶部向下的凹口对比。"],
+["ต","เต่า","乌龟","to tao","t · 不送气","ด","看顶部向下凹进去的一处；别把它认成顶部圆顺的 ด。"],
+["ถ","ถุง","袋子","tho thung","th · 送气","ภ","重点看底部小圈的位置；与 ภ 并排对照。"],
+["ท","ทหาร","军人","tho thahan","th · 送气","น","先看斜接的中间线，再看右侧竖杆；和 น 的连接形状对照。"],
+["ธ","ธง","旗帜","tho thong","th · 送气","ร","先看较宽的中部，再对照 ร 较窄的弯曲轮廓。"],
+["น","หนู","老鼠","no nu","n","ม","重点看底部转弯的位置；和 ม 并排追踪左右小圈之间的连接。"],
+["บ","ใบไม้","树叶","bo baimai","b","ป","像有小头的 U；右侧竖杆较短，没有像 ป 那样高高伸出。"],
+["ป","ปลา","鱼","po pla","p · 不送气","บ","右侧竖杆明显向上伸出；先用这个位置与 บ 区分。"],
+["ผ","ผึ้ง","蜜蜂","pho phung","ph · 送气","ฝ","先看两侧的高度；与右侧有高长杆的 ฝ 对比。"],
+["ฝ","ฝา","盖子","fo fa","f","ผ","右侧多出向上伸高的杆；别只看两字相似的底部。"],
+["พ","พาน","托盘","pho phan","ph · 送气","ฟ","看中间的折谷和右侧竖杆高度；与 ฟ 的高杆对比。"],
+["ฟ","ฟัน","牙齿","fo fan","f","พ","右侧竖杆更高；把它和 พ 放在同一基线上比较。"],
+["ภ","สำเภา","帆船","pho samphao","ph · 送气","ถ","重点看底部小圈的位置和连线方向；与 ถ 对照。"],
+["ม","ม้า","马","mo ma","m","น","先追踪两侧小圈之间下弯的连接；与 น 的底部转弯对照。"],
+["ย","ยักษ์","巨人","yo yak","y · 类似 yes 起音","ญ","没有 ญ 那样伸到主体下方的一层；看主体内部的折弯。"],
+["ร","เรือ","船","ro rua","r · 舌尖轻振","ว","较窄的上下弯曲轮廓；与 ว 较大的包围轮廓对照。"],
+["ล","ลิง","猴子","lo ling","l","ส","先看顶部；没有 ส 那条斜伸出去的线。"],
+["ว","แหวน","戒指","wo waen","w","ร","像带小圈的弯钩；沿包围部分观察，别认成较窄的 ร。"],
+["ศ","ศาลา","亭子","so sala","s","ค","先找顶端额外伸出的线，再比较与 ค 相似的主体。"],
+["ษ","ฤๅษี","隐士","so rusi","s","บ","先看右侧穿出的短线；不要只看与 บ 相似的下部。"],
+["ส","เสือ","老虎","so sua","s","ล","顶端有一条斜伸的线；与没有这条线的 ล 对照。"],
+["ห","หีบ","箱子","ho hip","h；特定组合中也可不单独发音","น","先看上部交接、向上伸出的线，再看下部；别只认小圈。"],
+["ฬ","จุฬา","风筝","lo chula","l","พ","先看上方多出的弯折，再看较宽的主体。"],
+["อ","อ่าง","盆","o ang","可作元音载体；也可参与元音组合","ฮ","看较完整的包围轮廓；上方没有 ฮ 的额外弯线。"],
+["ฮ","นกฮูก","猫头鹰","ho nokhuk","h","อ","主体近似 อ，重点找上方多出的弯线。"]
+];
+const LETTERS=RAW.map(([id,name,mnemonic,roman,sound,other,hint])=>({id,glyph:id,name:id+" "+name,mnemonic,roman,sound,other,hint,type:"辅音",speech:id+"อ "+name,source:1}));
+const VOWELS=[
+["า","◌า","长 aa","右侧", "ก → กา","在辅音右边的一条弯竖；和两小段的 ะ 对比。","ะ"],
+["ะ","◌ะ","短 a","右侧","ก → กะ","右边的两个小部件；不要当成长长一条的 า。","า"],
+["ิ","◌ิ","短 i","上方","ก → กิ","上方扁弯，没有 ี 末端多出的竖笔。","ี"],
+["ี","◌ี","长 ii","上方","ด → ดี","在 ิ 的形状上多出一处竖笔；要注意长短音。","ิ"],
+["ุ","◌ุ","短 u","下方","ด → ดุ","符号落在辅音下边；与 ู 的底部形状对比。","ู"],
+["ู","◌ู","长 uu","下方","ด → ดู","同样在下方，但比 ุ 多一处弯曲；长短不同。","ุ"],
+["เ","เ◌","单独使用时长 e；也参与组合","左侧","ก → เก","只有一根前置竖形；แ 是双竖形的一个字符。","แ"],
+["แ","แ◌","长 ae（/ɛː/）","左侧","ก → แก","外形像双竖；它是一个字母，不能写成两个 เ。","เ"],
+["โ","โ◌","长 o","左侧","ต → โต","向上伸高并带折弯；与 ไ、ใ 的顶端轮廓对照。","ไ"],
+["ไ","ไ◌","ai","左侧","ก → ไก่","左侧高杆；重点比较与 ใ 顶端不同的弯折。","ใ"],
+["ใ","ใ◌","ai（与 ไ 同音、拼法不同）","左侧","จ → ใจ","先看高处的内卷形；不要与 ไ 的顶部混淆。","ไ"],
+["ั","◌ั","闭音节常用的短 a 记号","上方","ว → วัน","独立的上方弯形；别与声调记号 ้ 混为一类。","้"],
+["ำ","◌ำ","am；本身包含末尾 m","上方和右侧","น → น้ำ","上方圆点和右侧 า 一起构成它；不是三个随便组合的字。","า"],
+["ึ","◌ึ","短 ue（/ɯ/）","上方","ก → กึ","上方带小圆点；与 ิ、ื 并排看细节。","ื"],
+["ื","◌ื","长 uue（/ɯː/）；常见组合 ◌ือ","上方，可与 อ 组合","ม → มือ","顶部有额外竖笔；在 มือ 中还需右边的 อ 配合。","ึ"]
+].map(([id,glyph,sound,position,example,hint,other])=>({id,glyph,sound,position,example,hint,other,type:"元音部件",name:glyph,mnemonic:sound,source:3}));
+const MARKS=[
+["่","◌่","声调记号 mai ek","上方的一小竖；不是元音，也不固定等于某一个声调。","้"],
+["้","◌้","声调记号 mai tho","上方带折弯的记号；ร้าน 与 ห้าม 都有它，实际声调却不同。","่"],
+["๊","◌๊","声调记号 mai tri","上方的小折曲；与形似加号的 ๋ 放在一起看。","๋"],
+["๋","◌๋","声调记号 mai chattawa","上方近似小加号；字形名不能代替整套声调判断。","๊"],
+["็","◌็","缩短记号 mai taikhu","不是四个声调记号之一；常参与短元音的拼写。","ั"],
+["์","◌์","不发音记号 thanthakhat","常提示被标记的辅音或辅音组不发音；不要读成额外元音。","้"]
+].map(([id,glyph,sound,hint,other])=>({id,glyph,sound,hint,other,type:"符号",name:glyph,mnemonic:sound,source:3}));
+const ITEMS=[...LETTERS,...VOWELS,...MARKS], BY=Object.fromEntries(ITEMS.map(x=>[x.id,x]));
+const GROUPS=[
+{title:"第一组 · 先看四个轮廓",ids:[..."กขคง"],why:"先记字形，再看起音。鸡、蛋等只是传统字母名的记忆词。"},
+{title:"第二组 · 长杆和凹口",ids:[..."ดตบป"],why:"每次只比较一处：顶部有无凹口、右杆有多高。"},
+{title:"第三组 · 店铺与禁止所需的字母",ids:[..."รนหม"],why:"先逐个认，暂时不要求你辨认整块 ร้าน 或 ห้าม。"},
+{title:"第四组 · 通道、出口与位置",ids:[..."ทอจว"],why:"先记字母。อ 的作用需放进词中判断，不能一律读成 o。"},
+{title:"第五组 · 再补四个常见字母",ids:[..."ยลสช"],why:"这 20 个辅音完成后，就有了拆解本课短词的基础。"},
+{title:"第六组 · 元音写在哪里",ids:VOWELS.map(x=>x.id),why:"◌ 是辅音位置的占位圈，不是实际泰文字母。每张显示符号位置。"},
+{title:"第七组 · 上方的小符号",ids:MARKS.map(x=>x.id),why:"先区分元音、四个声调记号、缩短和不发音记号。不要把所有上标都当声调。"}
+];
+const WORDS=[
+{th:"กา",zh:"乌鸦",rom:"kaa · 中调",parts:["ก","า"],explain:["ก 提供 k 起音（不送气）。","า 在右侧，是长 aa。"],rule:"拼词时读 k + aa，不连读字母名 ko kai。这个简单词帮助理解拼合。",source:5},
+{th:"ยา",zh:"药",rom:"yaa · 中调",parts:["ย","า"],explain:["ย 的起音类似英语 yes 的 y。","า 提供长 aa；不能把药店整块文字先硬背下来。"],rule:"y + aa → yaa。ร้านขายยา 的末尾就包含这个词。",source:4},
+{th:"ดู",zh:"看",rom:"duu · 中调",parts:["ด","ู"],explain:["ด 提供 d 起音。","ู 是写在下方的长 uu；显示时它贴着 ด。"],rule:"书写顺序记录为 ด + ู，实际字形中的元音位于下方。",source:3},
+{th:"ปิด",zh:"关闭",rom:"pìt · 低调",parts:["ป","ิ","ด"],explain:["ป 起音是 p，不送气；注意右侧高杆。","ิ 是上方的短 i。","ด 在这个词尾读成 t 收尾，不读成新的 daaw 音节。"],rule:"p + i + t → pìt。字母在开头和末尾的读法可能不同。",source:6},
+{th:"ทาง",zh:"路／通道",rom:"thaang · 中调",parts:["ท","า","ง"],explain:["ท 起音 th，是送气的 t，不是英语 think 的 th。","า 提供长 aa。","ง 在这里收 ng 鼻音。"],rule:"th + aa + ng → thaang。先理解单个字母，再辨通道这个词。",source:3},
+{th:"ห้าม",zh:"禁止",rom:"hâam · 降调",parts:["ห","้","า","ม"],explain:["ห 在本词提供 h 起音。","้ 写在上方，参与声调判断；不能单独读出。","า 提供长 aa。","ม 在词尾收 m。"],rule:"h + aa + m，跟读这个词的降调。拆分列的是书写组成，不是先把 ้ 读出来。",source:3},
+{th:"ร้าน",zh:"店铺",rom:"ráan · 高调",parts:["ร","้","า","น"],explain:["ร 提供 r 起音。","้ 在上方；同一个记号在不同条件下不一定产生相同声调。","า 提供长 aa。","น 在词尾收 n。"],rule:"r + aa + n；本词为高调。与 ห้าม 对照，别把 ้ 永远记成降调。",source:4},
+{th:"เข้า",zh:"进入",rom:"khâo · 降调",parts:["เ","ข","้","า"],explain:["เ 写在左侧，但不代表它在发音时最先读。","ข 提供 kh 起音，送气。","้ 是声调记号。","เ 与右边的 า 合起来，在这里组成 ao 元音。"],rule:"发音先 kh，再读组合元音 ao。不能逐字符读成 e + kh + aa。",source:3},
+{th:"ออก",zh:"出去",rom:"ɔ̀ɔk · 低调",parts:["อ","อ","ก"],explain:["第一个 อ 是这个音节的起始／元音载体。","第二个 อ 在这里参与长 ɔɔ 元音。","ก 在末尾收 k；不要额外加一个元音。"],rule:"同一字母在同一个词里也能承担不同角色。出口 ทางออก = ทาง + ออก。",source:3},
+{th:"เปิด",zh:"开放／营业",rom:"pə̀ət · 低调（元音 /ɤː/）",parts:["เ","ป","ิ","ด"],explain:["เ 是本词组合元音的一部分。","ป 仍提供不送气的 p 起音。","在这个闭音节里，เ 与 ิ 组成 /ɤː/，不是普通的短 i。","ด 在末尾收 t。"],rule:"它与 ปิด 不只差一个字形，元音也改变。先掌握这两个已核对的词，不从单个符号推断所有读音。",source:3}
+];
+let progress={seen:[],mastered:[],built:[]},storageOK=true;
+try{const p=JSON.parse(localStorage.getItem(STORE)||"null");if(p&&typeof p==="object")for(const k of ["seen","mastered","built"])progress[k]=Array.isArray(p[k])?[...new Set(p[k].filter(x=>typeof x==="string"&&(k==="built"?WORDS.some(w=>w.th===x):BY[x])))]:[];}catch(_){storageOK=false;}
+let state={page:"start",deck:0,pos:0,quiz:null,wi:0,building:false,placed:[],pool:[],buildHint:false,buildFeedback:""},voice=null;
+const app=document.getElementById("app"), esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const glyph=id=>BY[id]?BY[id].glyph:id;
+function save(){try{localStorage.setItem(STORE,JSON.stringify(progress));storageOK=true;}catch(_){storageOK=false;}status();}
+function status(){document.getElementById("storage").textContent=storageOK?"字母课独立保存；不改动原课程和速成练习记录。":"此浏览器暂时无法保存进度；仍可学习，刷新后可能丢失。";}
+function shuffle(a){const b=a.slice();for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;}
+function stop(){if(window.speechSynthesis)window.speechSynthesis.cancel();}
+function refreshVoice(){voice=window.speechSynthesis?window.speechSynthesis.getVoices().find(v=>/^th(?:-|$)/i.test(v.lang)&&v.localService===true)||null:null;document.getElementById("audio").textContent=voice?"可用：设备本地标准泰语合成。字母名与整词分别播放；未核听真人发音。":"未检测到本地泰语语音。认字和组字可用；听音按钮禁用，不宣称已学会发音。";document.querySelectorAll("[data-say]").forEach(b=>b.disabled=!voice);}
+function speak(text){if(!voice||!text)return;stop();try{const u=new SpeechSynthesisUtterance(text);u.voice=voice;u.lang=voice.lang;u.rate=.8;u.onerror=e=>{if(!["interrupted","canceled"].includes(e.error))document.getElementById("audio").textContent="播放失败；本页不把点播放视为发音通过。";};window.speechSynthesis.speak(u);}catch(_){document.getElementById("audio").textContent="播放失败；可继续文字认字。";}}
+function go(page){stop();state.page=page;render();window.scrollTo(0,0);}
+function linkSource(i){const s=SOURCES[i];return `<a href="${s[1]}" target="_blank" rel="noopener noreferrer">核对来源：${esc(s[0])}</a>`;}
+function render(){document.body.dataset.page=state.page;document.getElementById("nav").innerHTML=[["start","学习顺序"],["reference","44 字母表"],["symbols","元音与符号"],["build","逐字拼词"],["sources","资料与说明"]].map(([id,label])=>`<button data-go="${id}" ${state.page===id?'aria-current="page"':""}>${label}</button>`).join("");app.innerHTML=({start:renderStart,learn:renderLearn,quiz:renderQuiz,reference:renderReference,symbols:renderSymbols,build:renderBuild,sources:renderSources})[state.page]();status();refreshVoice();}
+function renderStart(){return `<section class=card><h2>第 0 步：字、元音和小符号是什么？</h2><p>先看这一个辅音：<b class=thai>ก</b>。加东西后，位置可能变：</p><span class="thai intro-demo">ก → กา　กิ　กุ　ไก่</span><p>主体 ก 仍在。า 在右边，ิ 在上面，ุ 在下面；ไ 写在左侧。ไก่ 上方的 ่ 又是另一类：声调记号。</p><p class=note>本课先让你认得字形，不要求马上读出陌生词。没有大小写；元音的书写位置不等于发音先后。字母名里的“鸡”只是记名方法，<b>ก 本身不等于“鸡”</b>。</p><button class="primary full" data-deck="0">开始：只学 ก、ข、ค、ง 四个字母</button></section><section class=card><h2>每次 4 个，学完再测</h2><p>建议先用 30–45 分钟走常用字母与位置教学，再用 15 分钟拆短词。其余辅音随时查，不要求一次背完 44 个。</p>${GROUPS.map((g,i)=>`<button class=lesson data-deck="${i}"><b>${esc(g.title)}</b><small>${g.ids.length} 张 · 遮住后认对 ${g.ids.filter(id=>progress.mastered.includes(id)).length}/${g.ids.length}</small></button>`).join("")}</section><section class=card><h2>学过字母后，再做这一步</h2><p>从 ก + า 到 กา，再学 ปิด、ทาง、ร้าน，最后才看入口／出口和开门／关门。</p><button class="primary full" data-go="build">进入逐字讲解与组字</button><p class=muted>浏览过 ${progress.seen.length} 张；无提示认对 ${progress.mastered.length} 个；完成组字 ${progress.built.length}/${WORDS.length} 个词。这些是练习记录，不是流利阅读证明。</p></section>`;}
+function deckIds(){return state.deck===44?LETTERS.map(x=>x.id):state.deck===45?[...VOWELS,...MARKS].map(x=>x.id):GROUPS[state.deck].ids;}
+function openDeck(n,pos=0){state.deck=n;state.pos=pos;go("learn");}
+function openItem(id){const d=LETTERS.some(x=>x.id===id)?44:45;state.deck=d;state.pos=(d===44?LETTERS:[...VOWELS,...MARKS]).findIndex(x=>x.id===id);go("learn");}
+function renderLearn(){const ids=deckIds(),x=BY[ids[state.pos]],o=BY[x.other];if(!progress.seen.includes(x.id)){progress.seen.push(x.id);save();}return `<div class="row between"><span class=badge>${esc(x.type)} · ${state.pos+1}/${ids.length}</span><button data-go=start>学习顺序</button></div><div class=bar><i style="width:${100*(state.pos+1)/ids.length}%"></i></div><section class=card><div class=glyphbox><span class=type>先看这个单独的${esc(x.type)}</span><span class="thai glyph" lang=th>${esc(x.glyph)}</span></div><h2>${x.type==="辅音"?"字母名："+esc(x.name):esc(x.sound)}</h2>${x.type==="辅音"?`<p>记忆词：<b>${esc(x.mnemonic)}</b>。这只是字母名字的一部分，不是字母本身的词义。</p><p class=sound>起音：${esc(x.sound)}</p><p class=muted>名称索引：${esc(x.roman)}（Unicode 无声调转写，不能拿来拼词）。</p><button class=full data-say="${esc(x.speech)}" ${voice?"":"disabled"}>听字母名（本机合成）</button>${["ฃ","ฅ"].includes(x.id)?"<p class=flag>历史字母：本课供认形，旅行不必优先背。</p>":""}`:`<p>位置：${esc(x.position||"通常在字母上方")}。◌ 只是辅音位置占位，实际词里没有这个圈。</p>${x.example?`<p class=thai style="font-size:32px">${esc(x.example)}</p><p class=muted>这是位置示例；部分是练习音节，不要求当旅游词背。</p>`:""}`}
+<h3>眼睛先看哪里</h3><p>${esc(x.hint)}</p><div class=compare><div><b>这次学</b><span class=thai lang=th>${esc(x.glyph)}</span></div><div><b>只作形状对照</b><span class=thai lang=th>${esc(o?o.glyph:x.other)}</span></div></div><p class=muted>观察法按带圈的常见印刷字设计。你的设备或真实店招可能换字体；圈的位置和长杆是线索，不是任何字体都适用的死规则。</p><details><summary>用手指描一遍轮廓（可选）</summary><p class=muted>沿灰字记形；不教笔顺、不自动判断写得对不对。</p><canvas id=trace width=600 height=240 aria-label="自由描形板"></canvas><button data-trace="${esc(x.glyph)}">显示／清空描形板</button></details>${linkSource(x.source)}</section><div class="row lesson-controls"><button class=grow data-prev ${state.pos===0?"disabled":""}>上一张</button><button class="primary grow" data-next-letter>${state.pos===ids.length-1?"遮住范字，测这一组":"看懂了，下一张"}</button></div><button class=full data-quiz>直接练已看过的字（不含未学字）</button>`;}
+function startQuiz(){const ids=deckIds().filter(id=>progress.seen.includes(id));if(ids.length<2){app.insertAdjacentHTML("beforeend","<p class=note role=status>先至少看两张卡，再做没有范字的选择题。</p>");return;}const order=shuffle(ids);state.quiz={ids:order,i:0,options:[],selected:null,score:0,missed:[]};prepareQuiz();go("quiz");}
+function prepareQuiz(){const q=state.quiz,target=q.ids[q.i];q.selected=null;q.options=shuffle([target,...shuffle(q.ids.filter(id=>id!==target)).slice(0,2)]);}
+function renderQuiz(){const q=state.quiz;if(!q)return renderStart();if(q.i>=q.ids.length)return `<section class=card><h2>这一轮认字完成</h2><p class=sound>${q.score}/${q.ids.length} 首次选对</p><p>答后看过解释的题不会被记为“首次认出”。</p>${q.missed.length?`<h3>回看这几张</h3>${q.missed.map(id=>`<button data-item="${esc(id)}"><span class=thai>${esc(glyph(id))}</span> 回看</button>`).join(" ")}`:"<p>下一次可以换一组，或去逐字拼词。</p>"}<button class="primary full" data-quiz>重新打乱这一组</button><button class=full data-go=build>继续：把字母放回短词</button><button class=full data-go=start>返回学习顺序</button></section>`;const x=BY[q.ids[q.i]],answered=q.selected!==null,correct=q.selected===x.id;return `<span class=badge>无范字辨认 · ${q.i+1}/${q.ids.length}</span><section class=card><h2>${x.type==="辅音"?`找出记忆词是“${esc(x.mnemonic)}”的辅音`:`找出：${esc(x.sound.replace(/[\u0E00-\u0E7F◌]/g,""))}`}</h2><p>刚才已学过这些选项。先自己回想形状，不显示范字和罗马字答案。</p>${q.options.map(id=>`<button class=choice data-answer="${esc(id)}" ${answered?"disabled":""}><span class=thai lang=th>${esc(glyph(id))}</span></button>`).join("")}${answered?`<div class="${correct?"good":"wrong"}" role=status><b>${correct?"这次独立认对了":"这张需要再看"}</b><p><span class=thai style="font-size:40px">${esc(x.glyph)}</span> ${esc(x.hint)}</p></div><button class="primary full" data-quiz-next>下一题</button><button class=full data-item="${esc(x.id)}">回到这张字母讲解</button>`:""}</section>`;}
+function answer(id){const q=state.quiz;if(!q||q.i>=q.ids.length||q.selected!==null||!q.options.includes(id))return;q.selected=id;const target=q.ids[q.i];if(id===target){q.score++;if(!progress.mastered.includes(id))progress.mastered.push(id);}else q.missed.push(target);save();render();}
+function renderReference(){return `<section class=card><h2>44 个辅音，每个都能点开学</h2><p>你不需要一次背完。每张都有放大字形、字母名、起音、观察位置和相似字对照。罕用的 ฃ、ฅ 已特别标出。</p><p class=note>本课的 h 表示“送气”：kh、ph、th 不是额外加一个 h 音节；th 也不是英语 think 的 th。字母名和词中的起音分开看。</p><div class=grid>${LETTERS.map(x=>`<button data-item="${x.id}"><span class=thai lang=th>${x.id}</span><small>${esc(x.mnemonic)}${["ฃ","ฅ"].includes(x.id)?" · 历史":""}${progress.mastered.includes(x.id)?" · 已认对":""}</small></button>`).join("")}</div>${linkSource(0)}<br>${linkSource(1)}</section>`;}
+function renderSymbols(){return `<section class=card><h2>先区分“元音部件”和“上方记号”</h2><p>◌ 是空位示意，不是一个要读出的字母。先看位置，再看组合；一个发音可能要由前、后、上方多个部件一起表示。</p><div class=grid>${VOWELS.map(x=>`<button data-item="${x.id}"><span class=thai>${x.glyph}</span><small>${esc(x.position)} · ${esc(x.sound)}</small></button>`).join("")}</div></section><section class=card><h2>四个声调记号与另外两种符号</h2><p>有 5 种声调，但只有 4 个声调记号。没有上标也有声调；实际声调还取决于辅音类别、元音长短和字尾。本轮先认识符号，不要求背完整推算表。</p><div class=grid>${MARKS.map(x=>`<button data-item="${x.id}"><span class=thai>${x.glyph}</span><small>${esc(x.sound)}</small></button>`).join("")}</div>${linkSource(3)}</section>`;}
+function renderBuild(){const w=WORDS[state.wi],missing=[...new Set(w.parts)].filter(id=>!progress.seen.includes(id));return `<div class="row between"><span class=badge>第 ${state.wi+1}/${WORDS.length} 个短词</span><button data-go=start>返回学习顺序</button></div><section class=card><h2>${state.building?"把学过的字放回位置：":"逐个拆开："}${esc(w.zh)}</h2>${missing.length&&!state.building?`<div class=note>这里还有 ${missing.length} 个你没看过的字，先点开学：<div class=parts>${missing.map(id=>`<button data-item="${esc(id)}"><span class=thai>${esc(glyph(id))}</span></button>`).join("")}</div>看完回来会保留这个词的位置。</div>`:""}${!state.building||state.buildHint?`<div class="word thai" lang=th>${esc(w.th)}</div><p class=sound>${esc(w.rom)}</p><div class=parts>${w.parts.map((id,i)=>`<div class=part><span class=thai>${esc(glyph(id))}</span><small>${i+1}. ${BY[id]?esc(BY[id].type):"部件"}</small></div>`).join("")}</div><div class=steps>${w.explain.map((text,i)=>`<p><b>${i+1}.</b> ${esc(text)}</p>`).join("")}</div><p class=note>${esc(w.rule)}</p><button class=full data-say="${esc(w.th)}" ${voice?"":"disabled"}>听完整短词（本机合成）</button>${linkSource(w.source)}`:""}${state.building?`<p>按<b>书写组成顺序</b>点选下方部件；这不等于逐个符号的发音顺序。</p><div class="slot thai" lang=th aria-label="已放入的部件">${esc(state.placed.map(i=>w.parts[i]).join(""))||"…"}</div><div class="row chips">${state.pool.map(i=>`<button data-piece="${i}" ${state.placed.includes(i)?"disabled":""}><span class=thai>${esc(glyph(w.parts[i]))}</span></button>`).join("")}</div>${state.buildFeedback?`<p class=${state.placed.length===w.parts.length?"good":"note"} role=status>${esc(state.buildFeedback)}</p>`:""}<button class=full data-build-hint>忘了就看讲解（记为借助提示）</button><button class=full data-build-reset>重新放一遍</button>`:`<button class="primary full" data-build-start>看懂了，遮住整词后试着组回去</button>`}</section><div class=row><button class=grow data-word-prev ${state.wi===0?"disabled":""}>上一个词</button><button class="primary grow" data-word-next ${state.wi===WORDS.length-1?"disabled":""}>下一个词</button></div>${state.wi===WORDS.length-1?`<section class=card><h2>现在再看标牌</h2><p class=thai style="font-size:32px">ทาง + เข้า → ทางเข้า<br>ทาง + ออก → ทางออก</p><p>遇到 ห้ามเข้า，先认禁止的 ห้าม；不可以只看到 เข้า 就当作入口。</p><a class="button primary full" href="./practice.html#signs">已有字母基础，继续标牌练习</a></section>`:""}<div class=parts>${WORDS.map((word,i)=>`<button data-word="${i}">${esc(word.zh)}${progress.built.includes(word.th)?" ✓":""}</button>`).join("")}</div>`;}
+function resetBuild(){state.building=false;state.placed=[];state.pool=[];state.buildHint=false;state.buildFeedback="";}
+function startBuild(){const w=WORDS[state.wi];state.building=true;state.placed=[];state.pool=shuffle(w.parts.map((_,i)=>i));state.buildHint=false;state.buildFeedback="";render();}
+function place(i){const w=WORDS[state.wi];if(!state.building||!Number.isInteger(i)||i<0||i>=w.parts.length||state.placed.includes(i)||state.placed.length>=w.parts.length)return;const want=w.parts[state.placed.length];if(w.parts[i]!==want){state.buildFeedback="位置还不对。可以点“看讲解”，不需要靠反复猜。";render();return;}state.placed.push(i);state.buildFeedback="";if(state.placed.length===w.parts.length){state.buildFeedback=state.buildHint?"借助讲解完成组字。再回看整词读法；这不记作独立阅读通过。":"组成正确。再对照整词读法；组对部件不等于已会读所有陌生词。";if(!progress.built.includes(w.th))progress.built.push(w.th);save();}render();}
+function renderSources(){return `<section class="card source"><h2>本课教到哪里</h2><p>44 个辅音均可逐张学习；常用 20 个放在前面。另有 15 个元音部件、4 个声调记号、2 个其他符号，以及 ${WORDS.length} 个逐字讲解短词。</p><p>没有把“认字母”冒充“会读泰语”。复合元音、字尾变化和声调规则只用已核对例子说明，未制作通用拼音生成器。泰北话和真人语流不在这页的教学能力声明内。</p><p>名称索引用 Unicode 无声调转写；短词转写带声调提示。它们用途不同，不应把字母名逐个连读成单词。声音由设备本地标准泰语合成；未核听真人效果。</p><h3>可核对的原始资料</h3>${SOURCES.map(x=>`<a href="${x[1]}" target="_blank" rel="noopener noreferrer">${esc(x[0])}</a>`).join("")}<p>观察字形的中文提示、练习顺序与互动为本课自行设计；不是转载的官方笔顺。设备字体、合成声音、真实街头字体辨认效果仍需你在实际设备上验证。</p></section>`;}
+function trace(text){const c=document.getElementById("trace");if(!c)return;const ctx=c.getContext("2d");ctx.clearRect(0,0,c.width,c.height);ctx.font='150px "Thonburi","Leelawadee UI","Garuda","Loma",Tahoma,sans-serif';ctx.textAlign="center";ctx.fillStyle="#c8d8ce";ctx.fillText(text,c.width/2,175);ctx.strokeStyle="#0f6854";ctx.lineWidth=5;ctx.lineCap="round";let down=false;const point=e=>{const r=c.getBoundingClientRect();return [(e.clientX-r.left)*c.width/r.width,(e.clientY-r.top)*c.height/r.height];};c.onpointerdown=e=>{down=true;c.setPointerCapture(e.pointerId);ctx.beginPath();ctx.moveTo(...point(e));};c.onpointermove=e=>{if(down){ctx.lineTo(...point(e));ctx.stroke();}};c.onpointerup=c.onpointercancel=()=>{down=false;};}
+document.addEventListener("click",e=>{const b=e.target.closest("button");if(!b||b.disabled)return;const d=b.dataset;if(d.go){go(d.go);return;}if(d.deck!==undefined){openDeck(Number(d.deck));return;}if(d.item){openItem(d.item);return;}if(b.hasAttribute("data-prev")){state.pos=Math.max(0,state.pos-1);stop();render();window.scrollTo(0,0);return;}if(b.hasAttribute("data-next-letter")){if(state.pos<deckIds().length-1){state.pos++;stop();render();window.scrollTo(0,0);}else startQuiz();return;}if(b.hasAttribute("data-quiz")){startQuiz();return;}if(d.answer){answer(d.answer);return;}if(b.hasAttribute("data-quiz-next")){const q=state.quiz;if(q&&q.selected!==null){q.i++;if(q.i<q.ids.length)prepareQuiz();render();window.scrollTo(0,0);}return;}if(d.say){speak(d.say);return;}if(d.trace){trace(d.trace);return;}if(d.word!==undefined){state.wi=Number(d.word);resetBuild();go("build");return;}if(b.hasAttribute("data-word-prev")||b.hasAttribute("data-word-next")){state.wi=Math.max(0,Math.min(WORDS.length-1,state.wi+(b.hasAttribute("data-word-next")?1:-1)));resetBuild();go("build");return;}if(b.hasAttribute("data-build-start")||b.hasAttribute("data-build-reset")){startBuild();return;}if(b.hasAttribute("data-build-hint")){state.buildHint=true;render();return;}if(d.piece!==undefined)place(Number(d.piece));});
+if(window.speechSynthesis)window.speechSynthesis.addEventListener("voiceschanged",refreshVoice);
+render();
+if((location.protocol==="https:"||["localhost","127.0.0.1"].includes(location.hostname))&&"serviceWorker" in navigator){navigator.serviceWorker.register("./sw.js",{scope:"./"}).then(()=>navigator.serviceWorker.ready).then(()=>{document.getElementById("offline").textContent="离线组件已就绪；请在实际设备上开飞行模式验证三个页面。";}).catch(()=>{document.getElementById("offline").textContent="缓存尚未确认；请联网刷新后再测。";});}else if(location.protocol==="file:")document.getElementById("offline").textContent="单文件模式；语音和本机存储仍取决于浏览器。";
+</script>
+</body>
+</html>

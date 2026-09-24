@@ -1,0 +1,36 @@
+name: Integrate and verify letter-first learning
+on:
+  push:
+    branches: [main]
+    paths: [scripts/integrate_alphabet.py]
+permissions:
+  contents: write
+concurrency:
+  group: letter-course-integration
+  cancel-in-progress: false
+jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Apply reviewed, hash-guarded page edits
+        run: python scripts/integrate_alphabet.py
+      - name: Install test tools
+        run: |
+          python -m pip install playwright==1.51.1
+          python -m playwright install --with-deps chromium
+      - name: Run new and existing regressions
+        run: |
+          python tests/test_alphabet.py
+          python tests/test_alphabet_integration.py
+          python tests/test_practice.py
+          node tests/test_sw.cjs
+      - name: Commit only reviewed page changes
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html practice.html sw.js README.md
+          git diff --cached --quiet && exit 0
+          git commit -m 'Integrate letter-first teaching into existing pages; release v1.2.0'
+          git push origin HEAD:main
