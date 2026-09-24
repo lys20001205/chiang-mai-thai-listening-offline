@@ -23,7 +23,8 @@ const SOURCES=[
 ["Richard Ishida：辅音、元音组合与字尾","https://r12a.github.io/scripts/thai/th"],
 ["Thai Language Hut：店铺词汇","https://thailanguagehut.com/types-shops/"],
 ["Lingopolo：กา（乌鸦）","https://lingopolo.org/thai/word/crow"],
-["Thai PBS：เปิด／ปิด，开与关","https://www.thaipbs.or.th/program/ChrisJobs/watch/102260"],\n["Thai-language.com：44辅音、21个词首音与三类辅音","https://www.thai-language.com/ref/consonants"]
+["Thai PBS：เปิด／ปิด，开与关","https://www.thaipbs.or.th/program/ChrisJobs/watch/102260"],
+["Thai-language.com：44辅音、21个词首音与三类辅音","https://www.thai-language.com/ref/consonants"]
 ];
 // 传统名称用于区别同音字母；不是把“鸡、蛋……”当成单个字母的意思。
 // 转写采用 Unicode 的无声调名称索引；拼词看独立的起音说明，不能连读字母名。
@@ -73,7 +74,8 @@ const RAW=[
 ["อ","อ่าง","盆","o ang","可作元音载体；也可参与元音组合","ฮ","看较完整的包围轮廓；上方没有 ฮ 的额外弯线。"],
 ["ฮ","นกฮูก","猫头鹰","ho nokhuk","h","อ","主体近似 อ，重点找上方多出的弯线。"]
 ];
-const LETTERS=RAW.map(([id,name,mnemonic,roman,sound,other,hint])=>({id,glyph:id,name:id+" "+name,mnemonic,roman,sound,other,hint,type:"辅音",speech:id+"อ "+name,source:1}));\n
+const LETTERS=RAW.map(([id,name,mnemonic,roman,sound,other,hint])=>({id,glyph:id,name:id+" "+name,mnemonic,roman,sound,other,hint,type:"辅音",speech:id+"อ "+name,source:1}));
+
 const HIGH_CLASS=new Set([..."ขฃฉฐถผฝศษสห"]), MID_CLASS=new Set([..."กจฎฏดตบปอ"]);
 function classOf(id){return HIGH_CLASS.has(id)?"高类":MID_CLASS.has(id)?"中类":"低类";}
 function classCss(id){return classOf(id)==="高类"?"class-high":classOf(id)==="中类"?"class-mid":"class-low";}

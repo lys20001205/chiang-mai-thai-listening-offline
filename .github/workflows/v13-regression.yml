@@ -1,4 +1,4 @@
-name: v1.3 sound-family regression # retry after test syntax fix
+name: v1.3 sound-family regression # retry after page syntax fix
 on:
   push:
     branches: [main]
