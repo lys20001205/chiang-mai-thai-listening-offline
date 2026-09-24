@@ -16,14 +16,14 @@ function check(ok,msg){assert.ok(ok,msg);count++;}
 async function lifecycle(t){let p;listeners[t]({waitUntil:x=>p=x});await p;}
 async function request(url,method='GET',mode='navigate'){let p;listeners.fetch({request:{url,method,mode},respondWith:x=>p=x});return p?await p:null;}
 (async()=>{
- stores.set('chiangmai-ear-shell-v7',new Map());stores.set('other-app',new Map());
+ stores.set('chiangmai-ear-shell-v8',new Map());stores.set('other-app',new Map());
  await lifecycle('install');check(skipped,'Activated after successful caching');
- check(CACHE==='chiangmai-ear-shell-v8','Release cache v7');check(stores.get(CACHE).size===5,'Five assets cached');
+ check(CACHE==='chiangmai-ear-shell-v9','Release cache v9');check(stores.get(CACHE).size===5,'Five assets cached');
  check(stores.get(CACHE).has(ROOT+'alphabet.html'),'Alphabet included');
- await lifecycle('activate');check(claimed,'Clients claimed');check(!stores.has('chiangmai-ear-shell-v6'),'Actual previous cache removed');check(stores.has('other-app'),'Other app caches preserved');
+ await lifecycle('activate');check(claimed,'Clients claimed');check(!stores.has('chiangmai-ear-shell-v8'),'Actual previous cache removed');check(stores.has('other-app'),'Other app caches preserved');
  network='offline';
- check(await(await request(ROOT+'alphabet.html?v=1.3.0')).text()==='ALPHABET','Alphabet fallback is alphabet');
- check(await(await request(ROOT+'practice.html?revision=8')).text()==='PRACTICE','Practice fallback remains distinct');
+ check(await(await request(ROOT+'alphabet.html?v=1.4.0')).text()==='ALPHABET','Alphabet fallback is alphabet');
+ check(await(await request(ROOT+'practice.html?revision=9')).text()==='PRACTICE','Practice fallback remains distinct');
  check(await(await request(ROOT+'index.html')).text()==='HOME','Home fallback remains distinct');
  check(await request(ROOT+'missing.html')===null,'Unknown routes not hijacked');
  check(await request('https://elsewhere.test/alphabet.html')===null,'Other origins untouched');
