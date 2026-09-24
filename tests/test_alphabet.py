@@ -20,7 +20,12 @@ def main():
    q=browser.new_page(viewport={'width':390,'height':844});q.on('pageerror',lambda e:errors.append(str(e)))
    q.evaluate(STORAGE,entries or {});q.evaluate(speech);q.set_content(HTML);return q
   a=page(entries={'chiangmai-ear-v1':'ORIGINAL','chiangmai-practice-v1':'PRACTICE'})
-  check(a.evaluate('LETTERS.length===44 && new Set(LETTERS.map(x=>x.id)).size===44'),'44 unique letters')\n  check(a.evaluate('FAMILIES.length===21 && FAMILIES.flatMap(x=>x.ids).length===44 && new Set(FAMILIES.flatMap(x=>x.ids)).size===44'),'21 sound families cover all 44 once')\n  check(a.evaluate('[...HIGH_CLASS].length===11 && [...MID_CLASS].length===9 && LETTERS.filter(x=>classOf(x.id)==="低类").length===24'),'11 high 9 mid 24 low classes')\n  check(a.evaluate('FAMILY_BY["ข"].id==="kh" && FAMILY_BY["ค"].id==="kh" && FAMILY_BY["ส"].id==="s" && FAMILY_BY["ซ"].id==="s"'),'Same-sound family mapping')\n  a.evaluate('go("families")');check('44 个辅音' in a.locator('main').inner_text() and '21 个词首声音' in a.locator('main').inner_text(),'Family-first explanation visible')\n  check(a.locator('.family-card').count()>=12,'Duplicate families rendered')
+  check(a.evaluate('LETTERS.length===44 && new Set(LETTERS.map(x=>x.id)).size===44'),'44 unique letters')
+  check(a.evaluate('FAMILIES.length===21 && FAMILIES.flatMap(x=>x.ids).length===44 && new Set(FAMILIES.flatMap(x=>x.ids)).size===44'),'21 sound families cover all 44 once')
+  check(a.evaluate('[...HIGH_CLASS].length===11 && [...MID_CLASS].length===9 && LETTERS.filter(x=>classOf(x.id)==="低类").length===24'),'11 high 9 mid 24 low classes')
+  check(a.evaluate('FAMILY_BY["ข"].id==="kh" && FAMILY_BY["ค"].id==="kh" && FAMILY_BY["ส"].id==="s" && FAMILY_BY["ซ"].id==="s"'),'Same-sound family mapping')
+  a.evaluate('go("families")');check('44 个辅音' in a.locator('main').inner_text() and '21 个词首声音' in a.locator('main').inner_text(),'Family-first explanation visible')
+  check(a.locator('.family-card').count()>=12,'Duplicate families rendered')
   check(a.evaluate('VOWELS.length===15 && MARKS.length===6'),'15 vowel parts and 6 marks')
   check(a.evaluate('WORDS.every(w=>w.parts.join(\"\")===w.th && w.explain.length===w.parts.length && w.parts.every(id=>BY[id]))'),'Decompositions complete and in actual spelling order')
   a.locator('[data-deck="0"]').first.click();check(a.locator('.glyph').inner_text()=='ก','Starts with single letter not word')
