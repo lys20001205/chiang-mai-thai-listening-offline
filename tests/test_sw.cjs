@@ -38,18 +38,18 @@ async function request(url, method = 'GET', mode = 'navigate') {
   return pending ? await pending : null;
 }
 (async () => {
-  stores.set('chiangmai-ear-shell-v4', new Map());
+  stores.set('chiangmai-ear-shell-v5', new Map());
   stores.set('unrelated-app-cache', new Map());
   await lifecycle('install');
   check(skipped, 'New SW may activate after all shell assets cached');
-  check(stores.get('chiangmai-ear-shell-v5').size === 4, 'Four shell assets cached');
-  check(stores.get('chiangmai-ear-shell-v5').has(ROOT + 'practice.html'), 'Practice included');
+  check(stores.get('chiangmai-ear-shell-v6').size === 4, 'Four shell assets cached');
+  check(stores.get('chiangmai-ear-shell-v6').has(ROOT + 'practice.html'), 'Practice included');
   await lifecycle('activate');
   check(claimed, 'Clients claimed');
   check(!stores.has('chiangmai-ear-shell-v4'), 'Old app cache removed');
   check(stores.has('unrelated-app-cache'), 'Other caches preserved');
   network = 'offline';
-  check(await (await request(ROOT + 'practice.html?revision=5')).text() === 'PRACTICE', 'Query-stripped offline practice is not home');
+  check(await (await request(ROOT + 'practice.html?revision=6')).text() === 'PRACTICE', 'Query-stripped offline practice is not home');
   check(await (await request(ROOT + 'index.html')).text() === 'HOME', 'Original page remains distinct');
   check(await request(ROOT + 'missing.html') === null, 'Unknown page not silently mapped to home');
   check(await request('https://elsewhere.test/practice.html') === null, 'External origin untouched');
