@@ -1,0 +1,23 @@
+name: v1.3 sound-family regression
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/v13-regression.yml]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Install browser test tools
+        run: |
+          python -m pip install playwright==1.51.0
+          python -m playwright install --with-deps chromium
+      - name: Run regressions
+        run: |
+          python tests/test_alphabet.py
+          python tests/test_alphabet_integration.py
+          python tests/test_practice.py
+          node tests/test_sw.cjs
